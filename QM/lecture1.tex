@@ -1,0 +1,68 @@
+\begin{center}
+
+Lecture 1
+
+\end{center}
+
+QM :- 
+
+\begin{itemize}
+
+\item Origin in the 1920's to supplant classic mechanics. 
+\item It has been confirmed theoretically and experimentally.
+\item It has a wide range of applications.
+	\begin{itemize}
+	\item Chemistry (elections)
+	\item Biological processes
+	\item Information Sciences
+	\item Quantum Computing
+	\item Nano technology
+	\item Cosmology
+	\item Quantum Gravity
+	\end{itemize}
+
+\item Solid mathematical framework, but this has caused a conceptual revolution.
+
+\end{itemize}
+
+\section{Foundations}
+
+\subsection{Classical Mechanics}
+
+Classical Mechanics is founded on the following principles:
+
+\begin{itemize}
+
+\item Perfect determination (All observables have definite value at all time).
+
+\item Measurement to arbitrary precision.
+
+\item Continuity.
+
+\item Separability: Independent systems do not affect each other.
+
+Hence if we know the state of the system and the dynamics then we can predict precisely the state at any later time. 
+
+$$ \frac{d}{dt} S = F[S(t)] $$
+
+\end{itemize}
+
+Classical mechanics concerns itself with two types of object: Particles and Waves.
+
+\subsubsection{Particles}
+
+The state of a single particle in 1-dimension is specified by position \& momentum. At an initial time $q_0 = q(t=0)$ and $p_0 = p(t=0)$. Dynamics then determines $q(t)$, $p(t)$ for all subsequent $t$. For $N$ particles in $d$ dimensions we have $n=Nd$ `degrees of freedom' for the system. These form the vectors $\{ \vec{q}_1, \vec{q}_2, \cdots, \vec{q}_N \}$ and $\{ \vec{p}_1, \vec{p}_2, \cdots, \vec{p}_N \}$. The state of the system is described by location in phase space $\Gamma$ described by the vectors of the dynamical variables. 
+
+There are two convenient descriptions for time evolution of these systems:
+
+\begin{enumerate}
+
+\item Lagrangian: which produces $n$ 2$^\text{nd}$ order DEs
+
+\item Hamiltonian: which produces $2n$ 1$^\text{st}$ order DEs
+
+\end{enumerate}
+
+The Lagrangian $L (q_i, \dot{q}_i)$ defines the action $\displaystyle S = \int_{t_0}^{t_1} L (q_i, \dot{q}_i) \, \, dt$. The principle of least action gives the Euler-Lagrange Equations:
+
+$$\frac{d}{dt} \left ( \frac{\partial L}{\partial \dot{q}_i} \right ) = \frac{\partial L}{\partial q_i}$$

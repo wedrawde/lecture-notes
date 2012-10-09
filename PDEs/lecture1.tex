@@ -1,0 +1,78 @@
+\begin{center}
+
+Lecture 1
+
+\end{center}
+
+A partial differential equation (PDE) involves a function $u$ of two or more independent variables and its derivatives.
+
+For example: 2 independent variables $x$, $y$ then $F(x, y, u_x, u_y, u_{xx}, u_{xy}, u_{yy}, \ldots) = 0$. Recall $u_x = \frac{\partial u}{\partial x}$. The order of a PDE is the order of the highest derivative. 
+
+\subsection*{Example 1}
+
+Some second-order PDEs 
+
+\begin{enumerate}
+
+\item Laplace's equation: $u_{xx} + u_{yy} = 0$ or in general (any number of dimensions) $\nabla^2 u = 0$
+
+\item Wave equation: $u_{tt} = c^2 u_{xx}$
+
+\item Heat (diffusion) equation: $u_t = k u_{xx}$
+
+\end{enumerate}
+
+These equations are all linear. The following are non-linear:
+
+\begin{enumerate}
+
+\item[4.] Fisher's equation: $u_t - u_{xx} = u(1-u)$
+
+\item[5.] Burger's equation: $u_t + u u_x = 0$
+
+\item[6.] Eikonal equation: $(u_x)^2 + (u_y)^2 = 1$
+
+\end{enumerate}
+
+Equation 4 is called semilinear meaning that the coefficents of the highest derivatives do not depend on $u$. Equation 5 is quasilinear because the coefficents of the highest derivative depend only on lower order derivatives. Equation 6 is fully nonlinear.
+
+Note: that an ordinary differential equation (ODE) is quasilinear if it can be written in the form: $\displaystyle \frac{d^n u}{d t^n} = G(t, u, u', u'', \ldots, u^{(n-1)})$. 
+
+\subsection*{Example 2}
+
+The Navier-Stokes equations for an incompressible fluid are:
+
+\begin{eqnarray*}
+\vec{u}_t + (\vec{u} \cdot \nabla)\vec{u} &= - \frac{1}{\rho} \nabla p + v \nabla^2 \vec{u} \\
+\nabla \cdot \vec{u} &= 0
+\end{eqnarray*}
+
+Where $\vec{u}$ is a vecotr in 3D and $\rho$ and $v$ are constant. The term $(\vec{u} \cdot \nabla)\vec{u}$ makes the equations quasilinear.
+
+To specify a particular solution of a second order ODE we need to provide either two initial conditions or two boundary conditions at two points.
+
+\subsection*{Example 3}
+
+Solve the ODE $y'' + y = 0$ subject to three different conditions:
+
+\begin{enumerate}
+
+\item $y(0) = \alpha$ and $y(0) = \beta$
+\item $y(0) = 0$ and $y(\pi) = a \neq 0$
+\item $y(0) = 0$ and $y(\pi) = 0$
+
+\end{enumerate}
+
+The general solution: $y = A \cos x + B \sin x$.
+
+\vspace{\baselineskip}
+
+Now try the boundary conditions
+
+\begin{enumerate}
+
+\item $A = \alpha $, $B = \beta $ So there is a unique solution $y(x) = \alpha \cos x + \beta \sin x$ for every $\alpha$ and $\beta$.
+\item $A = 0$, $y(\pi) = B \sin (\pi) = 0 \neq a$. Thus there is no solution.
+\item $A = 0$, $y(x) = B \sin x$ is a solution for any $B$ and thus there are an infinite number of solutions.
+
+\end{enumerate}

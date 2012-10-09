@@ -1,0 +1,14 @@
+*.pdf
+*.log
+*.aux
+*.bbl
+*.blg
+*.synctex.gz
+*.ps
+*.toc
+*.pdfsync
+*.sublime-workspace
+*.sublime-project
+*.out
+*.run.xml
+*.bcf

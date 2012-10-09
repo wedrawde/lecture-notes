@@ -1,0 +1,49 @@
+\begin{center}
+
+Lecture 2
+
+\end{center}
+
+Similarly the Hamiltonian produces: $H(q_i, p_i) = \sum_i \dot{q}_i p _i - L(q_i, \dot{q}_i)$ where canonical momentum $p_i = \frac{\partial L}{\partial \dot{q}_i}$. These give the Hamilton-Jacobi equations: $\dot{q}_i = \frac{\partial H}{\partial p_i}$ and $\dot{p}_i = - \frac{\partial H}{\partial q_i}$.
+
+More generally, the time evolution of any quantity $f(q_i, p_i)$ is $\frac{d}{dt} = \{ f, H \}$. Where $\{f, g\} = \sum_i \left( \frac{\partial f}{\partial q_i} \frac{\partial g}{\partial p_i} - \frac{\partial f}{\partial p_i} \frac{\partial g}{\partial q_i}\right)$ is called the Poisson bracket.
+
+The Poisson bracket has the following properties:
+
+\begin{itemize}
+\item $\{ f, g\} = - \{g,f\}$ (antisymmetry)
+\item $\{f, \alpha \} = 0 \, \, \, \, \forall \alpha$ constant.
+\item $\{ \alpha f + \beta g, h\} = \alpha \{f, h\} + \beta \{g, h\}$ for $\alpha$, $\beta$ constants. (bilinear)
+\item $\{f, \{g,h\}\} + \{g, \{h, f\}\} + \{h, \{f,g\}\} = 0$ (Jacobi identity)
+\item $\frac{d}{dt} \{f, g\} = \{\frac{d}{dt} f, g\} + \{f, \frac{d}{dt} g\}$ (Leibniz rule)
+\end{itemize}
+
+\subsubsection{Waves}
+
+A wave is a disturbance spread over space, described by a wave function $\Phi (\vec{x}, t)$ which obeys the wave equation $\nabla^2 \Phi = \frac{1}{c^2} \frac{\partial^2 \Phi}{\partial t^2}$. We require $\Phi (\vec{x}, t_0)$ and $\dot{\Phi} (\vec{x}, t_0)$ to determine $\Phi (\vec{x}, t)$ $\forall t$.
+
+The intensity of the wave is given by $I = |\Phi|^2$.
+
+If we consider plane waves, we find that $\Phi (x, t) = A e^{i \left(\frac{2\pi}{\lambda} x - \frac{2\pi}{\tau} t\right)}$ with $A$ as the amplitude, $\lambda$ as the wavelength and $\tau$ as the period. We can now define: $\kappa = \frac{2\pi}{\lambda}$ to be the wave number and $\omega = \frac{2\pi}{\tau}$. The wave travels at speed $v = \frac{\omega}{\tau}$.
+
+\subsection{Statistical vs fundamental uncertainty}
+
+In classical mechanics we describe the state of the system in terms of probability density $\rho (q_i, p_i)$ on the phase space $\Gamma$. Thus:
+
+$$\int_{\Gamma} d^n q d^n p \, \, \rho (q,p) = 1$$
+
+The mean of any observable F is therefore: $\bar{F} (q,p) = \int_{\Gamma} d^n q d^n p \, \, F(q,p)  \, \, \rho(q,p)$.
+
+The evolution of $\rho (q,p)$ is given by a continuity equation (a.k.a Liouville equation): $\frac{d}{dt} \rho = \{\rho, H\} + \frac{\partial \rho}{\partial t} = 0$.
+
+In quantum mechanics however, uncertainty is fundamental and we have to use a probabilistic description. 
+
+\subsection{Experimental foundations}
+
+Light has both the structure of a wave and a particle. In electromagnetism the waves are $\vec{E}$ and $\vec{B}$ waves with the speed of light $c = 3 \time 10^8 m/s$. However, in other ways it is better to see light as particles called ``photons''.
+
+\subsubsection{Double-slit experiment}
+
+Find a decent diagram.
+
+When the intensity is high the light gives wave interference patterns. When the intensity is lower light shows particle like discrete bundles, but the interference pattern remains.
