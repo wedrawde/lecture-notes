@@ -1,0 +1,78 @@
+\begin{center}
+
+Lecture 2
+
+\end{center}
+
+Extensive parameter are the basic variables that characterise a system in thermal equilibrium. Collectively denoted as $X_i$ where $i$ ranges over all such variables.
+
+Some examples of these are:
+
+\begin{itemize}
+
+\item Energy (internal energy): $U$, $E$
+\item Total mass: $M$
+\item Volume: $V$
+\item Number of particles: $N$
+\item Charges like electric charge: $q$
+
+\end{itemize}
+
+\subsection{First Law of Thermodynamics}
+
+The first law of thermodynamics states that extensive parameters are conserved. That is $\frac{d X_i}{dt} = 0$ in thermal equilibrium.
+
+If we have 2 systems $S_1$ and $S_2$ with extensive parameters $\{ X_i^1\}$ and $\{ X_i^2 \}$. If we combine these to form $S = S_1 \cup S_2$ then the extensive parameters of $S$ are $X_i = X_i^1 + X_i^2$ once $S_1$ and $S_2$ attain equilibrium.
+
+Conventionally, the first law is a statement of energy conversation. That is that change in energy = heat transferred + work done by the system. Or $\delta U = \delta Q - \delta W$. We will use the form $dU = T dS - P dV$ which is the total change in energy under an infinitesimal process.
+
+Extensive parameters $X_i$ scale with the system size or volume $V$. In particular, if we scale up the volume of the system by $\lambda$ i.e. $V \rightarrow \lambda V$ the extensive parameters $X_i \rightarrow \lambda X_i$.
+
+\subsection{Second Law of Thermodynamics}
+
+Kelvin and Clausius: There does not exist a physical process whose sole effect is to convert heat into work. In a more modern statement: the entropy of a system is non-decreasing in any physical process.
+
+Clausius introduced the concept of entropy. If the heat transfer in a process is $\delta Q$ then the systems gains entropy. This gives Clausius relation: $$dS = \frac{\delta Q}{T}$$
+
+$\delta Q$ is the change of $Q$ in a process or $\delta Q = Q_2 - Q-1$. $dU$ is an exact differential. If $U$ is a function of some variables $\{y_i\}$ then $dU = \sum_i \frac{\partial U}{\partial y_i} d y_i$.
+
+\subsection{Entropy}
+
+For any thermodynamic system we can associate an extensive quantity $S$, which is a function of the other extensive parameters satisfying the constraint: Entropy is maximised as a function of $X_i$.
+
+$\exists S(X_i)$ and $S(X_i)$ is non-decreasing in a physical process $\implies \delta S \geq 0$.
+
+Specifying $S(X_i)$ completes the characterisation of thermodynamic system. This defining relation $S(X_i)$ is called the entropic fundamental relation. $S(X_i)$ is a homogeneous function of degree 1 (this is a consequence of $S$ being extensive). Therefore if $X_i \rightarrow \lambda X_i$ then $S(\lambda X_i) = \lambda S(X_i)$.
+
+Entropic fundamental relation specifies thermodynamic equilibrium.
+
+\subsubsection*{Example}
+
+Consider a system whose extensive parameters are $U,V,N$. $S(U,V,N)$ specifies the system.
+
+\begin{itemize}
+
+\item[a)] $S(U,V,N) = x \sqrt{U^2 V N^2}$ is not a possible entropic function as $S(\lambda U, \lambda V, \lambda N) = c \sqrt{\lambda^2 U^2 \lambda V \lambda^2 N^2} = c \lambda^{5/2} \sqrt{U^2 V N^2}$.
+\item[b)] $S(U,V,N) = c (U^2 V^4 N)^{1/7}$ is a possible function.
+\item[c)] $S(U,V,N) = \exp \left (\frac{UV}{N^2}\right)$ is not as $S(\lambda U, \lambda V, \lambda N) = \exp \left (\frac{UV}{N^2}\right) = S(U,V,N)$.
+
+\end{itemize}
+
+\subsection{Intensive Parameters}
+
+The intensive parameters (entropic) $Z_i$ are conjugate to the extensive parameters $X_i$. That is $Z_i = \frac{\partial S}{\partial X_i}$.
+
+$Z_i$ are homogeneous functions of degree 0. 
+
+For example:
+
+\begin{itemize}
+
+\item Temperature ($T$) is conjugate to $U$
+\item Pressure ($P$) is conjugate to volume $V$.
+
+\end{itemize}
+
+\subsection{Third Law of Thermodynamics}
+
+The entropy change of any process at fixed temperature (isothermal) goes to zero as $T$ goes to zero. Or $\lim_{T \rightarrow 0} S(T, X_i) = 0$.
