@@ -4,3 +4,52 @@ Lecture 1
 
 \end{center}
 
+Lectures will use Guassian units, as opposed to SI units. That is $4 \pi \epsilon_0 = 1$.
+
+\section*{Introduction}
+
+The key details of the course are contained in Maxwell's equations:
+
+\begin{align*}
+
+\vec{\nabla} \cdot \vec{E} &= 4 \pi \rho \\
+\vec{\nabla} \wedge \vec{E} &= \frac{-1}{c} \frac{\partial \vec{B}}{\partial t} \\
+\vec{\nabla} \cdot \vec{B} &= 0 \\
+\vec{\nabla} \wedge \vec{B} &= \frac{1}{c} \frac{\partial \vec{E}}{\partial t} + \frac{4 \pi}{c} \vec{J}
+
+\end{align*}
+
+% I REALLY need to define some things in this module
+% Todo: get stuff from Corey
+
+These are the punchline: most of the course is build up to them. They are an important part of our understand of nature: this course is classical, but QED describes almost everything down to $10^{-18} m$.
+
+Idea of a field: sources $\rho + \vec{j}$ effect fields locally, influence is transmitted with some finite speed.
+
+\subsection*{Electric charges and currents}
+
+Electric charge is conserved! Fundamentally, charge is carried by carried by point particles: electrons, photons, etc. These are small, so classically better to use a smooth charge density $\rho (\vec{x}, t)$. The Total charge $Q$ is then $Q = \int_V \rho \,\, dV$ with $dV = dx dy dz = r \sin \theta dr d\theta \phi$.
+
+A current is a moving charge, we describe it using a current density $\vec{j} (\vec{x}, t)$. For a collection of charges moving uniformly with velocity $\vec{v}$, $\vec{j} = \rho \vec{v}$. This measures the totally charge through a surface per unit time. If we consider an arbitrary surface $S$ then the charge per unit time across the surface element $dS$ is $\vec{j} \cdot \vec{n} dS$. Thus the total current through $S$ is $I = \int_S \vec{j} \cdot \vec{n} dS$. 
+
+Consider a volume $V$ enclosed by a closed surface $S$. Charge conversation tells us that $I = \frac{-d}{dt} Q$. Therefore $\int \vec{j} \cdot \vec{n} dS = \frac{-d}{dt} \int \rho dV$.
+
+Assuming $V$ is fixed $\int \vec{j} \cdot \vec{n} dS = - \int \frac{\partial \rho}{\partial t} dV$. Now using the divergence theorem: $$\int \vec{\nabla} \cdot \vec{j} dV = - \int \frac{\partial \rho}{\partial t} dV$$.
+
+This must be true for all volumes $V$ and therefore:
+
+$$\vec{\nabla} \cdot \vec{j} = - \frac{\partial \rho}{\partial t}$$
+
+This is the continuity equation.
+
+So far, we have discussed the general dynamical case, now we will specialise to statics. Therefore $\rho(\vec{x})$, $\vec{j} (\vec{x})$, $\vec{E} (\vec{x})$, $\vec{B} (\vec{x})$. Thus the continutity equation becomes $\vec{\nabla} \cdot \vec{j} = 0$.
+
+And Maxwell's equations become (in the static case):
+
+\begin{align*}
+
+\vec{\nabla} \cdot \vec{E} &= \4 \pi \rho \\
+\vec{\nabla} \wedge \vec{E} &= 0 \\
+\vec{\nabla} \cdot
+
+\end{align*}
