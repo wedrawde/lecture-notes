@@ -73,3 +73,9 @@ The solution blows up at the $ t = 1/\alpha$ and thus the solution only exists f
 \subsubsection*{Example}
 
 Find the general solution $u(x, t)$ of $$u_{xx} = 0$$ and the particular solution satisfying $u(0, t) = 1$, $u(1, t) = \sin t$.
+
+Integrate with respect to $x$ to get $$u_x = f(t)$$ and again to get $$u = x f(t) + g(t)$$ where $f, g$ are arbitrary functions.
+
+The data give $u(0, t) = g(t) = 1$ and $u(1, t) = f(t) + 1 = \sin t$ and thus $f(t) = \sin t - 1$.
+
+So the particular solution is $$u(x,t) = x (\sin t - 1) + 1$$
