@@ -15,3 +15,45 @@ Remark: $\tilde{\alpha} = \alpha \cdot h : J \rightarrow \mathbb{R}^n$ is a pata
 For regular curves, there is a particular parametrisation such that the curve is unit speed parametrised.
 
 Definition: Let $\alpha : I \rightarrow \mathbb{R}^n$ be smooth and regular. The arc length of $\alpha$ measured from $\alpha (u_0)$ with $u_0 \in I$ is the function $l : I \rightarrow \mathbb{R}$, with $$l (u) = \int_{u_0}^u || \alpha ' (t) || dt$$
+
+\subsubsection*{Example: circle of radius r} 
+
+$\alpha (s) = (r \cos s, r \sin s)$. To find the arc length of $\alpha$ with respect to $\alpha(0)$:
+
+$$l(u) = \int_0^u || \alpha ' (t) || dt = \int_0^u r dt = ur$$
+
+Now $l(\frac{pi}{2}) = \frac{pi}{2} r$ which is the length of a quarter of the circle. If we consider $l(-\frac{pi}{2})$ then we get the negative as we would expect. This $l(u)$ is the signed length of the curve between $\alpha(u_0)$ and $\alpha (u)$
+
+If $\alpha$ is unit speed, then $l(u) = \int_{u_0}^u \underbrace{|| \alpha ' (t) ||}_{=1} dt = u - u_0$. Unit speed curves are also called arc length parametrised. Every smooth regularly curve can be reparametrised by arc length.
+
+\vspace{\baselineskip}
+
+Let $\alpha : I \rightarrow \mathbb{R}^n$ be smooth and regular, $l : I \rightarrow \mathbb{R}$ be arc length of $\alpha$ with respect to $\alpha(t_0)$, $t_0 \in I$. Let $J = l(I)$. Then $\alpha \circ l^{-1} : J \rightarrow \mathbb{R}^n$ is arc length parametrised.
+
+\begin{proof}
+
+We show $l^{-1}$ is a parameter change.
+
+$$l : I \rightarrow \mathbb{R}$ \, \, \, \, $l(t) = \int_{t_0}^t || \alpha ' (s) || ds$$.
+
+$$\implies l' (t) = || \alpha ' (t) || > 0$$
+
+$\implies$ $l$ is a smooth, strictly increasing increading function and thus it is bijective and hence $l^{-1}$ exists. Then $l^{-1} : J \rightarrow I$. Let $\beta = \alpha \circ l^{-1} : J \rightarrow \mathbb{R}^n$. By the chain rule, 
+
+$$\beta ' (s) = (\alpha \circ l^{-1})' (s) = \alpha ' (l^{-1} (s)) \cdot (l^{-1})(s) = \frac{\alpha ' (l^{-1} (s))}{l^{-1} (l^{-1} (s))} = \frac{\alpha ' (l^{-1} (s))}{||\alpha ' (l^{-1} (s))}$$
+
+(using that $l' (l^{-1} (s)) (l^{-1})' (s) = 1$)
+
+$\implies || \beta ' (s) || = 1$ and therefore $\beta$ is unit speed.
+
+\end{proof}
+
+\subsubsection*{Example: catenary}
+
+$\alpha (t) = (t, \cosh t)$. Now $\alpha ' (t) = (1, \sinh t)$ and thus $|| \alpha ' (t) || = \sqrt{1+\sinh^2 t} = \sqrt{\cosh^2 t} = \cosh t$.
+
+Now the arc length with respect to $\alpha (0)$:
+
+$$l(t) = \int_0^t || \alpha ' (s) || ds = \int_0^t \cosh s ds = \sinh t$$
+
+$$\implies l^{-1} = \sinh^{-1} (u) = \log (u + \sqrt{u^2 + 1})$$
