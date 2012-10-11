@@ -1,0 +1,31 @@
+\begin{center}
+
+Lecture 1
+
+\end{center}
+
+\section*{Introduction}
+
+\subsection*{What is a dynamical system?}
+
+A dynamical system is a set of functions which depend on ``time'', a single variable $t$. Time can be discrete $t=0,1,2,3,\ldots$ and therefore our dynamical variable will look like $x(t)$ and thus $x(0)=x_0$, $x(1)=x_1$ and so forth. To specify how $x_i$ ($i \in \mathbb{Z}$) we need some `law'.
+
+\subsubsection*{Example}
+
+Variables $x_i$, $y_i$. Some initial conditions $x_0 = 1$ and $y_0 = 1$.
+
+\vspace{\baselineskip}
+
+``Law of evolution'' $y_n = x_{n-1}$ and $x_n = y_{n-1 + x_{n-1}$.
+
+This is a discrete time dynamical system or a `recurence relation'. This dynamical system produces the fibonacci numbers.
+
+\subsubsection*{Logistic Difference Equation}
+
+This could be considered as a population model.  $ x_{n+1} = a x_n - b x_n^2$ with $a,b > 0$ and constants.
+
+This can be rescaled to give: $$x_{n+1} = r x_n (1-x_n)$$
+
+\vspace{\baselineskip}
+
+Time can also be continuous. Variables like $x(t)$ and $y(t)$. A dynamical system will have initial conditions like $x(0) = 1$ and $y(0) = 2$. The law of evolution are now differential equations. For example: $\frac{dy}{dt} = - x^2$ and $\frac{dx}{dt} = y + xy^59$. 
