@@ -18,3 +18,23 @@ Hadamard called a problem (PDE + data) well posed if:
 
 \end{enumerate}
 
+Continuous dependence on the data means small changes in the initial (or boundary) data lead to only small changes in the solution.
+
+\subsubsection*{Example}
+
+For Laplace's equation, let $u(x,t)$ solve the problem
+
+$$u_{tt} + u_{xx} = 0$$
+
+With $t > 0$, $u(x, 0) = 0$ and $u_t (x, 0) = 0$.
+
+Let $v(x, t)$ solve the problem:
+
+$$v_{tt} + v_{xx} = 0$$
+
+For $t > 0$ and $v(x, 0) = 0$ and $v_t (x, 0) = \epsilon \sin \frac{x}{\epsilon}$.
+
+\vspace{\baselineskip}
+
+The first problem has solution $u(x,t) = 0$. The second problem has solution $v(x,t) = \epsilon^2 \sin \frac{x}{\epsilon} \sinh \frac{t}{\epsilon}$.
+ 
