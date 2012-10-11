@@ -57,3 +57,9 @@ Now the arc length with respect to $\alpha (0)$:
 $$l(t) = \int_0^t || \alpha ' (s) || ds = \int_0^t \cosh s ds = \sinh t$$
 
 $$\implies l^{-1} = \sinh^{-1} (u) = \log (u + \sqrt{u^2 + 1})$$
+
+$$\implies \beta (u) = \alpha \circ l^{-1} (u) = \alpha (\log (u + \sqrt{u^2 + 1}))$$
+
+Now simplify:
+
+$$(\log (u + \sqrt{u^2 + 1}), \cosh (\sinh^{-1} (u))) = (\log (u + \sqrt{u^2 + 1}), \sqrt{u^2 + 1})$$
