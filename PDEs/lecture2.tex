@@ -37,4 +37,23 @@ For $t > 0$ and $v(x, 0) = 0$ and $v_t (x, 0) = \epsilon \sin \frac{x}{\epsilon}
 \vspace{\baselineskip}
 
 The first problem has solution $u(x,t) = 0$. The second problem has solution $v(x,t) = \epsilon^2 \sin \frac{x}{\epsilon} \sinh \frac{t}{\epsilon}$.
- 
+
+Note that $u$ and $v$ both solve the same equation, and their initial time derivatives are close, in the send that $|| v_t (x, 0) - u_t (x, 0) ||_{\infty} = \epsilon$. 
+
+But, at a later time, the maximum difference over $x$ is $|| v(x, t) - u(x, t) ||_{\infty} = \epsilon^2 | \sinh \frac{t}{\epsilon}$ which is exponentially large $\implies$ the problem is not well posed (or is ill posed).
+
+\subsubsection*{Example}
+
+Now supposed $u(x, t)$ and $v(x,t)$ solve the wave equation:
+
+$$u_{tt} - u_{xx} = 0$$
+
+With the same data as the previous example.
+
+\vspace{\baselineskip}
+
+Now the solutions are $u(x, t) = 0$, but $v(x, t) = \epsilon^2 \sin \frac{x}{\epsilon} \sin {t}{\epsilon}$.
+
+Now $|| v(x, t) - u(x, t) ||_{\infty} = \epsilon^2 | \sin \frac{t}{\epsilon} | \leq \epsilon^2$. So now small changes in the initial data here lead only to small changes in the solution $\implies$ this is now a well posed problem.
+
+This message of this: we need to be care to impose appropriate data if we want a well posed problem.
