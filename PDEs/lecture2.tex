@@ -56,4 +56,20 @@ Now the solutions are $u(x, t) = 0$, but $v(x, t) = \epsilon^2 \sin \frac{x}{\ep
 
 Now $|| v(x, t) - u(x, t) ||_{\infty} = \epsilon^2 | \sin \frac{t}{\epsilon} | \leq \epsilon^2$. So now small changes in the initial data here lead only to small changes in the solution $\implies$ this is now a well posed problem.
 
-This message of this: we need to be care to impose appropriate data if we want a well posed problem.
+This message of this: we need to be care to impose appropriate data if we want a well posed problem. Even a well posed problem may not have a ``global'' solution (i.e. throught the domain of interest).
+
+\subsubsection*{Example}
+
+Solve the ODE $y' = y^2$ with $y(0) = \alpha$ with $\alpha$ constant.
+
+Separating variables gives: $$\int \frac{dy}{y^2} = \int dt \implies \frac{-1}{y} + \frac{1}{y(0)} = t - 0$$
+
+Thus $$y = \frac{\alpha}{1 - \alpha t}$$
+
+The solution blows up at the $ t = 1/\alpha$ and thus the solution only exists for a finite range of $t$.
+
+\subsection{Simple PDEs}
+
+\subsubsection*{Example}
+
+Find the general solution $u(x, t)$ of $$u_{xx} = 0$$ and the particular solution satisfying $u(0, t) = 1$, $u(1, t) = \sin t$.
