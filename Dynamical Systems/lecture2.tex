@@ -20,13 +20,59 @@ The three body problem cannot be solved in exact form. However, qualitative anal
 
 \subsubsection*{Example: Volterra-hotka}
 
-The Volterra-hotka equations are for preditor prey population simulations. $x$ is a population of foxes and $y$ is a population of rabbit. Now
+The Volterra-hotka equations are for predator prey population simulations. $x$ is a population of foxes and $y$ is a population of rabbit. Now
 
 \begin{align*}
-\dot{x} &= x(by-a)
+\dot{x} &= x(by-a) \\
 \dot{y} &= y(x-dx)
 \end{align*}
 
 With $a,b,c,d>0$ constants.
 
-If $x=y=0$ then $\dot{x} = \dot{y} = 0$ also if $x = c/d$ and $y = a/b$
+If $x=y=0$ then $\dot{x} = \dot{y} = 0$ also if $x = c/d$ and $y = a/b$. Also if $x < c/d \implies \dot{y} > 0$ and similarly $x > c/d \implies \dot{y} < 0$
+
+\subsubsection*{Example: Lorenz system}
+
+\begin{align*}
+\dot{x} &= 10 (y-x) \\
+\dot{y} &= 28x - y - xy \\
+\dot{z} &= xy - \frac{8}{3} z
+\end{align*}
+
+\section{Basics of Dynamical Systems}
+
+\subsection{Standard form for ODEs as dynamical systems}
+
+\subsubsection{Example 1}
+
+$$\ddot{x} + \dot{x}^2 \sin x + \log x = 0$$
+
+Put $\dot{x} = y$. Now $$\dot{y} + y^2 \sin x + \log x = 0$$ these two equations act as a dynamical system.
+
+\subsubsection{Example 2}
+
+$$\dddot{x} + \ddot{x} \dot{x}^2 e^x + x^5 = 0$$
+
+Now let $\dot{x} = y$ and $z = \dot{y} = \ddot{x}$. The original equation is now $$\dot{z} + z y^2 e^x + x^5 = 0$$ This produces the following dynamical system:
+
+\begin{align*}
+\dot{x} &= y \\
+\dot{y} &= z \\
+\dot{z} &= -z y^2 e^x - x^5
+\end{align*}
+
+\vspace{\baselineskip}
+
+A stand form for a dynamical system is as follows: variables $x_1 (t), \ldots, x_n(t)$ with equations $\dot{x}_i (t) = F_i (x_1 (t), \ldots, x_n (t), t)$ for $i = 1 \ldots n$.
+
+If $F_i$ do not depend explicitly on time $t$ i.e. $\dot{x}_i = F_i (x_1, \ldots, x_n)$. These are called autonomous dynamical systems.
+
+It is usual to take $F_i$ to be $C_1$ (i.e. continuously differentiable).
+
+\subsection{Phase Space}
+
+Phase space $M$ is the space of all allowed configurations of the systems so if $(x_1, \ldots, x_n)$ we allow $x_i \in \mathbb{R}$ then $M = \mathbb{R}^n$.
+
+\subsubsection{Example 1}
+
+Consider $\dot{x} = y$, $\dot{y} = -x$. Now consider $\frac{d}{dt} (x^2 + y^2) = 2 x \dot{x} + 2 y \dot{y}$. Using the equations we see that $2 x \dot{x} + 2 y \dot{y} = 0$ and the phase space must be $\mathbb{R}^2$ because any values on a circle are permitted which is all of $\mathbb{R}^2$.
