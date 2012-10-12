@@ -1,0 +1,32 @@
+\begin{center}
+
+Lecture 2
+
+\end{center}
+
+There are very few linear equations. Most are far harder to solve. ODEs can be divided up as such:
+
+\begin{enumerate}
+
+\item Linear equations (easy to deal with but very few are useful)
+\item Non-linear equations (many of them but not easy to solve)
+\item Integrable equations (very very few non linear ones which have a solution)
+
+\end{enumerate}
+
+\subsubsection*{Example: 3 body problem}
+
+The three body problem cannot be solved in exact form. However, qualitative analysis is important (so we know the planets aren't suddenly going to throw earth out of the solar system)
+
+\subsubsection*{Example: Volterra-hotka}
+
+The Volterra-hotka equations are for preditor prey population simulations. $x$ is a population of foxes and $y$ is a population of rabbit. Now
+
+\begin{align*}
+\dot{x} &= x(by-a)
+\dot{y} &= y(x-dx)
+\end{align*}
+
+With $a,b,c,d>0$ constants.
+
+If $x=y=0$ then $\dot{x} = \dot{y} = 0$ also if $x = c/d$ and $y = a/b$
