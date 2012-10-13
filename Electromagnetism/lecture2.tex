@@ -1,0 +1,113 @@
+\begin{center}
+
+Lecture 2
+
+\end{center}
+
+\section{Electrostatics}
+
+\subsection{Coulomb's Law}
+
+In 1785, Coulomb studied forces between static charges experimentally:
+
+\begin{equation}
+F_{ij} = \frac{q_i q_j}{4 \pi \epsilon_0 r_{ij}^2}
+\end{equation}
+
+In fact force is a vector:
+
+\begin{equation}
+\vec{F_{ij}} = \frac{q_i q_j \vec{r}_{ij}}{4 \pi \epsilon_0 r_{ij}^3}
+\end{equation}
+
+With $\vec{r}_{ij} = \vec{r}_i - \vec{r}_j$ and $r_{ij} = | \vec{r}_{ij} | $
+
+Units: force has units of $m L T^{-2}$ and $\frac{q_i q_j}{4 \pi \epsilon_0}$ has units $m L^3 T^{-2}$.
+
+\vspace{\baselineskip}
+
+$\epsilon_0$ is a dimension parameter, whose value depends on units. Choose $\frac{1}{4\pi\epsilon_0} = 1$, this defines the units of charge.
+
+There is a dimensionless coulomb: $$\alpha = \frac{e^2}{4 \pi \epsilon_i \bar{h} c} \approx \frac{1}{137}$$ with $e$ as the charge on an electron.
+
+\subsection{Principle of superposition}
+
+The force produced by two or more charges is just the sum of individual forces: 
+
+\begin{equation}
+\vec{F}_j = \sum_{i\neq j} \vec{F}_{ij} = \sum_{i \neq j} \frac{q_i q_j \vec{r}_{ij}}{\vec{r}^3_{ij}}
+\end{equation}
+
+We say that Electromagnetism is a linear theory.
+
+\subsection{Electric Field}
+
+Coulomb's law posits an action at a distance. In modern physics, we like our affects to be local. Therefore we introduce the electric fielder $\vec{E}$ by saying that if a charge $q$ feels a force $\vec{F}$ at a point $\vec{r}$, it is due to an electric field $\vec{E}(\vec{r})$ such that
+
+\begin{equation}
+\vec{F} = q \vec{E}
+\end{equation}
+
+Coulomb implies a sing charge produces an electric field
+
+\begin{equation}
+\vec{E}(\vec{r}) = q_i \frac{\vec{r} - \vec{r}_i}{| \vec{r} - \vec{r}_i |^3}
+\end{equation}
+
+and for multiple charges
+
+\begin{equation}
+\vec{E}(\vec{r}) = \sum_i q_i \frac{\vec{r} - \vec{r}_i}{| \vec{r} - \vec{r}_i |^3}
+\end{equation}
+
+Note: Electric field diverges at location of the sources. Classically, point charges are an approximation, but the issue will return.
+
+\vspace{\baselineskip}
+
+For practical purposes, we replace the sum over individual charges with an integral over a charge density. That is $q_i \rightarrow \rho(\vec{r}) \Delta V_i$
+
+\begin{equation*}
+\vec{E} = \sum_i \frac{\rho(\vec{r}') (\vec{r} - \vec{r}')}{| \vec{r} - \vec{r}'|^3} \Delta V_i
+\end{equation*}
+
+\begin{equation}
+\vec{E} (\vec{v}) = \int \rho (\vec{r}') \frac{(\vec{r} - \vec{r}')}{| \vec{r} - \vec{r}'|^3} dV'
+\end{equation}
+
+We can also work with linear or surface charge density:
+
+\begin{equation}
+\vec{E} (\vec{r}) = \int \lambda (\vec{r}) \frac{(\vec{r} - \vec{r}')}{| \vec{r} - \vec{r}'|^3} dl
+\end{equation}
+
+With $\lambda(\vec{r})$ being a linear charge density. And as a surface:
+
+\begin{equation}
+\vec{E}(\vec{r}) = \int \sigma (\vec{r}) \frac{(\vec{r} - \vec{r}')}{| \vec{r} - \vec{r}'|^3} dS
+\end{equation}
+
+With $\sigma (\vec{r})$ a surface charge density.
+
+\subsection{Electric flux and Gauss' law}
+
+The electric flux is defined as
+
+\begin{equation}
+\displaystyle \int_S \vec{E} \cdot \vec{n} dS
+\end{equation}
+
+This gives the ``flow'' of $\vec{E}$ through $S$.
+
+\vspace{\baselineskip}
+
+Consider a closed surface $S$ enclosing a point charge $q$. Calculate $\oint_S \vec{E} \cdot \vec{n} dS$. Define coords with $q$ at origin. Now $$\vec{E}(\vec{r}) = \frac{q \vec{r}}{r^3}$$
+
+Now $\vec{E} \cdot \vec{n} = \frac{q}{r^2} \cos \theta$. $dS \cos \theta$ is equal to an area of patch on a sphere of radius $r$. So $dS \cos \theta = r^2 d \Omega = r^2 \sin \bar{\theta} d \bar{\theta} d \phi$ (using spherical polars). So $\vec{E} \cdot \vec{n} dS = \frac{q}{r^2} \cos \theta dS = \frac{q}{r^2} \cdot r^2 d \Omega = q \sin \bar{\theta} d \bar{\theta} d \phi$ and there is no longer an $r^2$.
+
+If $S$ is not too wonky, $\bar{\theta}, \phi$ is a good coordinate system on the whole of $S$. Thus
+
+\begin{equation}
+\oint_S \vec{E} \cdot \vec{n} dS = \int_0^{\pi} d \bar{\theta} \int_0^{2 \pi} d \phi q \sin \bar{\theta} d \bar{\theta} d \phi = 4 \pi q
+\end{equation}
+
+As an exercise consider a general $S$ where a line from $q$ may pass through the surface multiple times.
