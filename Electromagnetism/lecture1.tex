@@ -26,13 +26,13 @@ Idea of a field: sources $\rho + \vec{j}$ effect fields locally, influence is tr
 
 \subsection*{Electric charges and currents}
 
-The most basic thing we know is that electric charge is conserved. Fundamentally, charge is carried by carried by point particles: electrons, photons, etc. These are small, so classically better to use a smooth charge density $\rho (\vec{x}, t)$. The Total charge $Q$ is then $Q = \int_V \rho \,\, dV$ with $dV = dx dy dz = r \sin \theta dr d\theta \phi$.
+The most basic thing we know is that electric charge is conserved. Fundamentally, charge is carried by carried by point particles: electrons, photons, etc. These are small, so classically it is better to use a smooth charge density $\rho (\vec{x}, t)$. The Total charge $Q$ is then $Q = \int_V \rho \,\, dV$ with $dV = dx dy dz = r \sin \theta dr d\theta \phi$.
 
 A current is a moving charge, we describe it using a current density $\vec{j} (\vec{x}, t)$. For a collection of charges moving uniformly with velocity $\vec{v}$, $\vec{j} = \rho \vec{v}$. This measures the total charge through a surface per unit time. If we consider an arbitrary surface $S$ then the charge per unit time across the surface element $dS$ is $\vec{j} \cdot \vec{n} \, \, dS$. Thus the total current through $S$ is $I = \int_S \vec{j} \cdot \vec{n}  \, \,dS$. 
 
 Consider a volume $V$ enclosed by a closed surface $S$. Charge conversation tells us that $I = \frac{-dQ}{dt}$. Therefore: $$\int \vec{j} \cdot \vec{n} \, \, dS = \frac{d}{dt} \int \rho dV$$.
 
-Assuming $V$ is fixed gives $\int \vec{j} \cdot \vec{n} \, \, dS = - \int \frac{\partial \rho}{\partial t} dV$. Now using the divergence theorem: $$\int \vec{\nabla} \cdot \vec{j} dV = - \int \frac{\partial \rho}{\partial t} dV$$.
+Assuming $V$ is fixed gives $\int \vec{j} \cdot \vec{n} \, \, dS = - \int \frac{\partial \rho}{\partial t} dV$. Now using the divergence theorem: $$\int \vec{\nabla} \cdot \vec{j} \, \, dV = - \int \frac{\partial \rho}{\partial t} dV$$
 
 This must be true for all volumes $V$ and therefore:
 

@@ -1,0 +1,41 @@
+\begin{center}
+
+Lecture 3
+
+\end{center}
+
+\subsection{Curves in the plane}
+
+We'll look at the curvature $\kappa$ of a curve. Let $\alpha(s)$ be a curve in $\mathbb{R}$ parametrised by arc length, i.e. $||\alpha'(s)|| = 1$. Let $\alpha(s) = (x(s), y(s))$. Then $\alpha'(s)$ is the unit vector $t(s) = (x'(s), y'(s))$.
+
+Rotate $t(s)$ through $\pi/2$ anticlockwise to obtain $n(s) = (-y'(s), x'(s))$. This is the unit normal vector. Curvature will measure the rate of change of $t(s)$. But: $t(s) \cdot t(s) = 1$. So: $t'(s) \cdot t(s) = 0$ thus $t'(s)$ is perpendicular to $t(s)$ and must be a scalar multiple of $n(s)$. The scalar in this is the curvature: $t'(s) = \kappa n(s)$ for a scalar $\kappa(s)$.
+
+Note: $\kappa(s) = \kappa(s) n(s) \cdot n(s) = t'(s) \cdot n(s)$
+
+\subsubsection*{Example: Straight line}
+
+$\alpha(u) = a + uv$ To parametrise by arc length let $\beta(s) = a + s \frac{v}{||v||}$ then $\beta'(s) = \frac{v}{||v||} = t(s)$, so this is a unit speed parametrisation. Here $t(s)$ is constant, so $t(s) = 0$, so $\kappa = 0$.
+
+\subsubsection*{Example: Circle}
+
+$\alpha(s) = (r \cos \frac{s}{r}, r \sin \frac{s}{r})$. Now check this is parametrised by arc length: $\alpha'(s) = (-\sin \frac{s}{r}, \cos \frac{s}{r}) = t(s)$. Here $n(s) = (-\cos \frac{s}{r}, - \sin \frac{s}{r})$ and $t'(s) = (- \frac{1}{r} \sin \frac{s}{r}, - \frac{1}{r} \sin \frac{s}{r})$. So $t'(s) \cdot n(s) = \frac{1}{r}$ as expected.
+
+Note: if you traverse the circle clockwise you obtain: $\frac{-1}{r}$
+
+\subsection{How to find $\kappa$ for a curve in $\mathbb{R}^2$ not parametrised by arc length}
+
+Let $\alpha(u) = (x(u), y(u))$. Recall the arc length parameter for $\alpha$, $s = l(u) = \int_{u_0}^u || \alpha'(t)|| dt$. Note: $\frac{ds}{du} = || \alpha'(u)||.$
+
+For calculating $\kappa$ we use $\kappa(s) = \frac{dt}{ds} \cdot n(s)$. Here $t(u) = \frac{\alpha'(u)}{||\alpha'(u)||} = \frac{(x'(u), y'(u))}{\sqrt{(x'(u))^2 + (y'(u))^2}}$
+
+So now $n(u) = \frac{(-y'(u), x'(u))}{\sqrt{(x'(u))^2 + (y'(u))^2}}$.
+
+Also $\frac{dt}{ds} = \frac{dt}{du} \frac{du}{ds} = \frac{1}{||\alpha'(u)||} \frac{dt}{du} = \frac{1}{\sqrt{(x'(u))^2 + (y'(u))^2}} \frac{d}{du} \left(\frac{(x'(u), y'(u))}{\sqrt{(x'(u))^2 + (y'(u))^2}}\right)$
+
+So $\kappa = \frac{dt}{ds} \cdot n(s) = \frac{x'(u) y''(u) - x''(u) y'(u)}{((x'(u))^2 + (y'(u))^2)^{3/2}}$
+
+\subsubsection*{Example: Ellipse}
+
+$\alpha (u) = (a \cos u, b \sin u)$ $\implies$ $\alpha'(u) = (- a \sin u, b \cos u)$.
+
+So $\kappa = \frac{(-a \sin u)(-b \sin u) - (-a \cos u)(b \cos u)}{(a^2 \sin^2 u + b^2 \cos^2 u)^{3/2}} = \frac{ab}{(a^2 \sin^2 u + b^2 \cos^2 u)^{3/2}}$

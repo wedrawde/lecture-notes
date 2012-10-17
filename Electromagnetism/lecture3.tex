@@ -1,0 +1,73 @@
+\begin{center}
+
+Lecture 3
+
+\end{center}
+
+For any general surface we have that $\vec{E} \cdot \vec{n} \, \, dS$ is negative when the ray from $q$ to outside of the surface passes back into the volume. Thus when all of these contributions are added up we get cancellation for all of them other than one and obtain exactly the same result. If we consider $q$ outside of the surface then $\int \vec{E} \cdot \vec{n} \, \, dS = 0$ as the ray passes through an even number of times, and we have complete cancellation.
+
+Now using the principle of superposition we see that 
+
+\begin{equation}
+\int_S \vec{E} \cdot \vec{n} \, \, dS = 4 \pi \sum_{i \in V} q_i
+\end{equation}
+
+where the sum is over the charges in $S$.
+
+For continuous charge distributions:
+
+\begin{equation}
+\int_S \vec{E} \cdot \vec{n} \, \, dS = 4 \pi \int_V \rho \, \, dV
+\end{equation}
+
+Using the divergence theorem: $$ \int_S \vec{E} \cdot \vec{n} \, \, dS = \int_V \vec{\nabla} \cdot \vec{E} \, \, dV$$ so
+$$\int_V \vec{\nabla} \cdot \vec{E} \, \, dV = 4 \pi \int_V \rho \, \, dV$$
+
+This is true for any volume $V$ and thus 
+
+\begin{equation}
+\vec{\nabla} \cdot \vec{E} = 4 \pi \rho
+\end{equation}
+
+Given $\rho$, now we have two ways to get $\vec{E}$:
+
+\begin{itemize}
+\item Integrate $\vec{E}(\vec{r}) = \int \rho(\vec{r}) \frac{\vec{r} - \vec{r}'}{|\vec{r} - \vec{r}'}$
+\item Solve Maxwell's equation: $\vec{\nabla} \cdot \vec{E}(\vec{r}) = 4 \pi \rho (\vec{r})$
+\end{itemize}
+
+In symmetrical situations, the latter (in the form of Guass Law) is usually easier.
+
+Substitute the integral into the differential form:
+
+$$\vec{\nabla} \cdot \vec{E} = \int \rho (\vec{r'}) \, \, \vec{\nabla} \cdot \frac{\vec{r} - \vec{r}'}{|\vec{r} - \vec{r}|^3} \, \, dV'$$
+
+To evaluate $\vec{\nabla} \cdot \frac{\vec{r} - \vec{r}'}{|\vec{r} - \vec{r}|^3}$, take $\vec{r}'$ to be the origin. Now consider $\vec{\nabla} \frac{\vec{r}}{|\vec{r}|^3}$. Recall (from exercise sheet) $\vec{\nabla} \cdot \vec{r} = 3$ in 3D.
+
+Now $\vec{\nabla} \cdot \frac{1}{| \vec{r} |^3} = \frac{-3 \vec{r}}{|\vec{r}|^5}$ for $\vec{r} \neq \vec{0}$
+
+Then $$\vec{\nabla} \cdot \frac{\vec{r}}{|\vec{r}|^3} = \frac{\vec{\nabla} \cdot \vec{r}}{|\vec{r}|^3} + \vec{r} \cdot \vec{\nabla} \frac{1}{|\vec{r}|^3} = \frac{3}{|\vec{r}|^3} - \frac{3 \vec{r} \cdot \vec{r}}{|\vec{r}|^5} = 0$$ for $\vec{r} \neq \vec{0}$
+
+To understand what happens at $\vec{r} = \vec{0}$, regulate the divergence. Thus $\frac{1}{|\vec{r}|^3} \rightarrow \frac{1}{(r+a)^{3/2}}$. Now compute: $\vec{\nabla} \cdot \frac{1}{(r+a)^{3/2}}$. Consider the $x$ component: $\frac{\partial}{\partial x} \left(\frac{1}{(x^2 + y^2 + z^2 + a^2)^{3/2}}\right) = \frac{- 3/2}{(x^2 + y^2 + z^2 + a^2)^{5/2}} \cdot 2x = \frac{-2x}{(x^2 + y^2 + z^2 + a^2)^{5/2}}$
+
+Now $\vec{\nabla} \cdot \left( \frac{\vec{r}}{(r^2 + a^2)^{3/2}}\right) = \frac{3}{(r^2 + a^2)^{3/2}} - \frac{3 \vec{r} \cdot \vec{r}}{(r^2 + a^2)^{5/2}} = \frac{3a^2}{(r^2 + a^2)^{3/2}}$ as $a \rightarrow 0$ then $\frac{3a^2}{(r^2 + a^2)^{3/2}} \rightarrow 0$ for $r neq 0$ and $\frac{3a^2}{(r^2 + a^2)^{3/2}} \rightarrow \infty$ for $r = 0$.
+
+Then $\int \vec{\nabla} \cdot \left(\frac{\vec{r}}{(r^2 + a^2)^{5/2}}\left) \, \, dV = 4 \pi \int_0^{\infty} \frac{3a^2}{(r^2 + a^2)^{5/2}} r^2 \, \, dr$ Let $r = az$
+
+Then $\int \vec{\nabla} \cdot \left(\frac{\vec{r}}{(r^2 + a^2)^{5/2}}\left) \, \, dV = 4 \pi \int_0^{\infty} \frac{3 z^2}{(z^2 + 1)^{5/2}} \, \, dz$ which is independent of $a$. Thus the integral is $4 \pi$.
+
+So write $\lim_{a \rightarrow 0} \frac{3a^2}{(r^2 + a^2)^{5/2}} = 4 \pi \delta^3(\vec{r})$ where $\delta^3(\vec{r}) = 0$ for $\vec{r} \veq \vec{0}$ and $\int \delta^3 (\vec{r}) \, \, dV = 1$.
+
+So $\vec{\nabla} \cdot \left(\frac{\vec{r}}{|\vec{r}|^3}\right) = 4 \pi \delta^3(\vec{r})$.
+
+Shift by a constant: $\vec{\nabla} \cdot \frac{\vec{r} - \vec{r}'}{|\vec{r} - \vec{r}|^3} = 4 \pi \delta^3 (\vec{r} - \vec{r}')$.
+
+The more mathematical way: believe the divergence theorem:
+
+$$\int \vec{\nabla} \cdot \left(\frac{\vec{r}}{|\vec{r}|^3}\right) \, \, dV = \int_S \frac{\vec{r} \cdot \vec{n}}{|\vec{r}|^3} dS$$
+
+Chose $S$ as a sphere of radius $r$. That is $\vec{r} \cdot \vec{n} = r$ and $dS = r^2 \sin \theta \, d\theta \, d\phi$ and therefore $\int \sin \theta d\theta d\phi = 4 \pi$.
+
+Finally:
+
+$$\vec{\nabla} \cdot \vec{E} = \int \rho(\vec{r}') \vec{\nabla} \frac{\vec{r} - \vec{r}'}{|\vec{r} - \vec{r}|^3} \, \, dV = 4 \pi \int \rho (\vec{r}) \delta^3 (\vec{r} - \vec{r}') dV = 4 \pi$$
