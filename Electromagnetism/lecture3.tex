@@ -52,11 +52,11 @@ To understand what happens at $\vec{r} = \vec{0}$, regulate the divergence. Thus
 
 Now $\vec{\nabla} \cdot \left( \frac{\vec{r}}{(r^2 + a^2)^{3/2}}\right) = \frac{3}{(r^2 + a^2)^{3/2}} - \frac{3 \vec{r} \cdot \vec{r}}{(r^2 + a^2)^{5/2}} = \frac{3a^2}{(r^2 + a^2)^{3/2}}$ as $a \rightarrow 0$ then $\frac{3a^2}{(r^2 + a^2)^{3/2}} \rightarrow 0$ for $r neq 0$ and $\frac{3a^2}{(r^2 + a^2)^{3/2}} \rightarrow \infty$ for $r = 0$.
 
-Then $\int \vec{\nabla} \cdot \left(\frac{\vec{r}}{(r^2 + a^2)^{5/2}}\left) \, \, dV = 4 \pi \int_0^{\infty} \frac{3a^2}{(r^2 + a^2)^{5/2}} r^2 \, \, dr$ Let $r = az$
+Then $\int \vec{\nabla} \cdot \left(\frac{\vec{r}}{(r^2 + a^2)^{5/2}}\right) \, \, dV = 4 \pi \int_0^{\infty} \frac{3a^2}{(r^2 + a^2)^{5/2}} r^2 \, \, dr$ Let $r = az$
 
-Then $\int \vec{\nabla} \cdot \left(\frac{\vec{r}}{(r^2 + a^2)^{5/2}}\left) \, \, dV = 4 \pi \int_0^{\infty} \frac{3 z^2}{(z^2 + 1)^{5/2}} \, \, dz$ which is independent of $a$. Thus the integral is $4 \pi$.
+Then $\int \vec{\nabla} \cdot \left(\frac{\vec{r}}{(r^2 + a^2)^{5/2}}\right) \, \, dV = 4 \pi \int_0^{\infty} \frac{3 z^2}{(z^2 + 1)^{5/2}} \, \, dz$ which is independent of $a$. Thus the integral is $4 \pi$.
 
-So write $\lim_{a \rightarrow 0} \frac{3a^2}{(r^2 + a^2)^{5/2}} = 4 \pi \delta^3(\vec{r})$ where $\delta^3(\vec{r}) = 0$ for $\vec{r} \veq \vec{0}$ and $\int \delta^3 (\vec{r}) \, \, dV = 1$.
+So write $\lim_{a \rightarrow 0} \frac{3a^2}{(r^2 + a^2)^{5/2}} = 4 \pi \delta^3(\vec{r})$ where $\delta^3(\vec{r}) = 0$ for $\vec{r} \neq \vec{0}$ and $\int \delta^3 (\vec{r}) \, \, dV = 1$.
 
 So $\vec{\nabla} \cdot \left(\frac{\vec{r}}{|\vec{r}|^3}\right) = 4 \pi \delta^3(\vec{r})$.
 
