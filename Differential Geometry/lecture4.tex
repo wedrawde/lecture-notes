@@ -1,0 +1,39 @@
+\begin{center}
+
+Lecture 4
+
+\end{center}
+
+\subsection{Local extrema of $\kappa$ for an Ellipse}
+
+\begin{align*}
+\kappa '(u) &= - \frac{3}{2} \frac{ab}{(a^2 \sin^2 u + b^2 \cos^2 u)^{5/2}} \cdot (2a^2 \sin u \cos u - 2b^2 \cos u \sin u) \\
+&= -3 \frac{ab}{(a^2 \sin^2 u + b^2 \cos^2 u)^{5/2}} (a^2 - b^2) \frac{1}{2} \sin (2u) = 0 \\
+&\implies \sin (2u) = 0 \implies u = k \cdot \frac{\pi}{2} \, \, \text{for any} k \in \mathbb{Z}
+\end{align*}
+
+Now $\kappa(0) = \frac{ab}{b^3}= \frac{a}{b^2} = \kappa(\pi)$ which is the maxima of $\kappa$ and $\kappa(\frac{\pi}{2}) = \frac{b}{a^2} = \kappa(\frac{\pi}{2})$ is the minima of curvature.
+
+\vspace{\baselineskip}
+
+Let $\alpha : I \rightarrow \mathbb{R}^2$ be a smooth regular plane curve with curvature $\kappa : I \rightarrow \mathbb{R}$. $\alpha(u)$ is called a vertex of $\alpha$ if $\kappa'(u) = 0$. $\alpha(u)$ is called a point of inflection of $\alpha$ if $\kappa(u) = 0$.
+
+\subsubsection*{Example: A cubic curve $\alpha(u) = (u, u^3)$}
+
+Differentiate: $\alpha'(u) = (1, 3u^2)$. Thus $||\alpha'(u)|| = \sqrt{1+9u^4}$ And again: $\alpha''(u) = (0, 6u)$ and thus $\kappa(u) = \frac{6u}{(1+9u^4)^{3/2}} = 0 \implies u = 0$ and thus $\alpha(0) = (0,0)$ is a point of inflection of $\alpha$. However $(0,0)$ is not a vertex.
+
+\subsubsection{Example: A parabola $\alpha(u) = (u, u^2)$}
+
+$\alpha'(u) = (1, 2u)$ thus $||\alpha'(u)|| = \sqrt{1+4u^2}$
+
+$\alpha''(u) = (0,2)$ and $\kappa (u) = \frac{2}{(1+4u^2)^{3/2}}$ $\implies$ no point of inflection.
+
+$\kappa'(u) = - \frac{3}{2} \frac{2}{(1+4u^2)^{5/2}} 8u = - \frac{24 u}{(1+4u^2)^{5/2}} = 0$ and thus $u=0$. Therefore $\alpha(0) = (0,0)$ is a vertex of $\alpha$.
+
+%\begin{theorem}
+%Any simple, smooth, regular, closed, convex plane curve has at least 4 vertices. 
+%\end{theorem}
+
+\vspace{\baselineskip}
+
+Any simple, smooth, regular, closed, convex plane curve has at least 4 vertices. A curve is simple if it has no sell intersections. A closed curve is called convex if it is always on one side of its tangent line.
