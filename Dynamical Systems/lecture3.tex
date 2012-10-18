@@ -1,0 +1,39 @@
+\begin{center}
+
+Lecture 3
+
+\end{center}
+
+\subsubsection*{Example}
+
+Bacterial growth. Let $x$ be a population of bacteria. $\dot{x} = k x$ with $k > 0$. Solution is $x = A e^{kt}$. Population $x > 0$, this is because negative populations do not make sense. Take the phase space to be: $\{x | x \geq 0\}$
+
+\subsubsection*{Example: Pendulum}
+
+$\ddot{x} + \sin (x) = 0$ to turn into a dynamical system take $y=\dot{x}$ then:
+
+\begin{align*}
+\dot{x} &= y \\
+\dot{y} &= - \sin (x) = \ddot{x}
+\end{align*}
+
+If $x$ is small then $\sin x \approx x$ and then $\ddot{x} + x \approx 0$ or $\dot{x} = y$, $\dot{y} \approx -x$. Thus this looks like the simple harmonic oscillator.
+
+% Need a diagram of the phase space here
+
+If we identify $x$ with $x + 2\pi$, then phase space becomes $S \times \mathbb{R}$
+
+\subsection{Trajectories in Phase space - Phase flow}
+
+Phase flow tells us how a system evolves in time. Let $x_0 \in M$ ($M$ phase space) be the state vector (i.e. configuration of the system) at $t=0$. Let the system evolve in time while obeying the laws of the dynamical systems. $\dot{x} = F (x, t)$
+
+Denote the state that the system has evolved to at time $t$ as $x(t) = g^t x_0$. This define a map on the phase space. $g^t : M \rightarrow M$. In general this is a one dimensional group of diffeomorphism. This is a group because $\underbrace{g^r}_{\text{r seconds of waiting}} \underbrace{g^s x_0}_{\text{system after s seconds}} = g^{r+s} x_0 = g^s (g^r x_0)$, the inverse is $g^{-r} g^r x_0 = \underbrace{g^0}_{\text{identity}} x_0 = x_0$.
+
+Trajectory through the point $x_0$ is defined to be $\{x \in M | x = g^t x_0 \, \, \text{for some} \, \, t \in \mathbb{R}\}$.
+
+Note:
+\begin{itemize}
+\item[a)] The fact there is a trajectory through each point $x_0 \in M$ is the statement of existence of solutions to ODEs.
+\item[b)] There is only one trajectory through each point (uniqueness of solutions to ODE's).
+\item[c)] $g^t$ is not a diffeomorphism sometimes. e.g. if the solution blows up in some region.
+\end{itemize}
