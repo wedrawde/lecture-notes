@@ -4,3 +4,38 @@ Lecture 3
 
 \end{center}
 
+We consider equations of the form $a(x,y) u_x + b(x,y) u_y + c(x,y) u = d(x,y)$. Where $a,b,c,d$ are given and $u$ is to be solved for.
+
+To solve this we first consider the vector field $v(x,y) = (a(x,y), b(x,y))$ and construct its integral curves, i.e. the solutions of $$\frac{dy}{dx} = \frac{b(x,y)}{a(x,y)} = f(x,y)$$
+
+These integral vurces are called characteristic projections.
+
+From the theory of ODEs we can solve for the integral curves in a neighbourhood of $(x_0, y_0)$ if $f$ is lipschitz in that area. Recall that lipschitz means that for $I \subset \mathbb{R}^n$ be closed and $f: I \rightarrow \mathbb{R}$ is lipschitz if: $$\sup_{x,y \in I \, \, \text{and} \, \, x \neq y} \frac{|f(x) - f(y)|}{|x-y|} < \infty$$
+
+Assuming that we have solved for the characteristic projections we can write the PDE as: $$v \cdot \nabla u + cu = d$$ where $v$ is the vector field from above and $\nabla = (\partial_x, \partial_y)$.
+
+Using $\tau$ to denote the arc length along a characteristic projection the PDE becomes: $$|v| \partial_{\tau} u + cu = d$$ we cannot prescribe the values of $u(x_0, y_0)$ and $u(x_1, y_1)$ if they lie on the same curve. 
+
+To uniquely solve the ODE we must specify $u$ as exactly one point on each curve. We can do this along a curve $\gamma$ which is ``not'' a characteristic projection.
+
+\subsubsection*{Example}
+
+$u_x + u_y + u = 1$ and $u(x,0)=x^2$.
+
+To solve start by working out the characteristic projections: $\frac{dx}{dt} = a(x,y) = 1$ and $\frac{dy}{dt} = b(x,y) = 1$.
+
+\vspace{\baselineskip}
+
+The characteristic projection curves are $x(s,t) = t + s$ and $y(s,t) = t$
+
+Going back to the PDE: Consider the derivative of $u$ along a characteristic projection: $$\frac{du}{dt} = \frac{\partial u}{\partial x} \frac{dx}{dt} + \frac{\partial u}{\partial u} \frac{dy}{dt} = u_x + u_y = 1 - u$$
+
+Now we solve the ODE: $\displaystyle \frac{du}{dt} = 1 -u$.
+
+Try: $\int \frac{du}{1-u} = \int dt$ $\implies$ $log (1-u) = -t + c$ and then $u(s,t) = 1 - A(s) e^{-t}$.
+
+Now determine $A(s)$ use the fact that $u(s,0) = s^2 = 1 - A(s)$ $\implies$ $A(s) = 1 - s^2$.
+
+Thus $u(s,t) = 1 - (1-s^2)e^{-t}$. Now using $x(s,t)$ and $y(s,t)$ defined before we can get what the solution for $u(x,y)$ is: $$u(x,y) = 1 - (1-(x-y)^2) e^{-y}$$
+
+Aside: in this example $t = \sqrt{2} \tau$ where $\tau$ is arc length.
