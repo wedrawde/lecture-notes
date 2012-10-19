@@ -1,0 +1,79 @@
+\begin{center}
+
+Lecture 4
+
+\end{center}
+
+\subsection{Applications to symmetric sitations}
+
+\begin{enumerate}
+\item Sphereical symmetry. Suppose $\rho = \rho(r)$. The symmetry implies $\vec{E} = E(r) \vec{e}_r$ This is a function of only $r$. If $E(\theta)$ or $E(\phi)$ are not zero this would break sphereical symmetry by picking a direction.
+
+Calculate $E(r)$ by Gauss' Law. Consider a surface $S$ which is a sphere of radius $r$.
+\begin{align*}
+\int_S \vec{E}\cdot \vec{n} ~dS &= E_r(r) \int \,\, dS = 4 \pi E_r(r) \\
+&= 4 \pi Q_{encl} = 4\pi \int _V \rho (r) ~dV
+\end{align*}
+
+Thus: 
+\begin{equation}
+E_r(r) = \frac{Q_{encl} (r)}{r^2}
+\end{equation}
+
+An example: consider an electric field for a charged shell of radius $a$ totally charge $Q$. 
+\[
+E(r) = \begin{dcases*}
+0 & r < a \\
+\frac{Q}{r^2} & r > a
+\end{dcases*}
+\]
+
+Another example: Uniformly charged sphere of radius $a$, total charge $Q$.
+
+$\implies$ $E = \frac{Q}{r^2}$ for $r > a$.
+
+For $r<a$, $Q_{encl} = \int \rho dV = \rho \int_0^r dV = \rho \int_0^r r^2 \sin \theta dr d\theta d\phi = \rho \frac{1}{3} r^3 4 \pi$.
+
+So $Q_{encl} (r) = \frac{4 \pi r^3}{3} \rho$ and $Q_{encl} = \frac{4\pi a^3}{3} \rho$ and so $Q_{encl} = \frac{r^3}{a^3} Q$.
+
+Thus: \[
+E(r) = \begin{dcases*}
+\frac{r}{a^3} & r<a \\
+\frac{Q}{r^2} & r>a 
+\end{dcases*}
+\]
+
+Note $\vec{E}$ is continuous at $r=a$ when there is no surface charge density.
+
+\item Cylindrical symmetry.
+
+In cylindrical polars $(r, \phi, z)$ assume $\rho(r)$. Again symmetry gives $\vec{E} = \vec{E}_r (r) \vec{e}_r$ \footnote{Assuming we also preserve the reflection symmetries $z \rightarrow -z$ and $\phi \rightarrow -\phi$}.
+
+Take $S$ to be a cylinder of radius $r$: 
+\begin{align*}
+\oint_S \vec{E}\cdot {n} ~dS &= E_r(r) \int dS = 2\pi r E_r(r) \int dz \\
+&= 4 \pi Q_{encl} = 4 \pi \int^r \rho(\bar(r)) dV \\
+&= 4 \pi \int^r \rho(\bar(r)) \bar(r) d\bar(r) d\phi dz \\
+&= 8 \pi^2 (\int^r \rho(\bar(r)) \bar(r) d\bar(r))(\int dz) 
+\end{align*}
+
+And thus
+\begin{equation} 
+E_r(r) = \frac{4\pi}{r} \int^r \rho (\bar(r) \bar(r) d\bar(r))
+\end{equation}
+
+For example: for a uniformly charged cylinder of charge/unit length $\lambda$ and radius $a$: $$\lambda = \int^a \rho r dt d\phi = 2 \pi \frac{1}{2} \rho a^2 = \pi a^2 \rho$$.
+
+For $r>a$: $$E_r(r) = \frac{4 \pi}{r} \rho \int^a \bar{r} d\bar{r} = \frac{2 \pi \rho a^2}{r} = \frac{2 \lambda}{r}$$
+
+And for $r<a$: $$E_r(r) = \frac{4 \pi}{r} \rho \int^a \bar{r} d\bar{r} = 2 \pi \rho r = \frac{2 \lambda r}{a^2}$$
+
+\item Planar symmetry (something like a charged sheet)
+
+$\rho(z)$ then by symmetry: $E = E(z) \vec{e}_z$ (but often allow components $E_x$, $E_y$, not determined by charge density). Draw a Guassian surface with faces $z=z_+$, $z=z_-$, $r^2 = (x^2 + y^2) = a^2$.
+
+Now $\oint_S \vec{E}\cdot {n} ~dS = (E_z (z_+) - E_z(z_-)) \cdot \pi a^2 = 4 \pi Q_{encl} = 4 \pi \int \rho(z) dV = 4 \pi \int_{z_-}^{z_+} \rho (z) dz \cdot \pi a^2$
+
+So $E_z (z_+) - E_z(z_-) = 4 \pi \int_{z_-}^{z_+} \rho(z) dz$
+
+\end{enumerate}
