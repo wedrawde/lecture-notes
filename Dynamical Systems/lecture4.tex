@@ -1,0 +1,58 @@
+\begin{center}
+
+Lecture 4
+
+\end{center}
+
+\subsection{Existence and Uniqueness Theorem}
+
+We've been drawing `phase flows' for ODE's. Through each point in the phase space there is a single trajectory. This is the same thing as saying there exists a unique solution to the ODE with some given initial conditions. i.e. $\dot{x}_i = F_i(x,t)$ with $i = 1 \ldots n$ has solution with $x(0) = x_0$. This is true if $F_i(x,t)$ is continuously differentiable ($C_1$).
+
+\subsubsection{Example}
+
+$\frac{dx}{dt} = k x^{1/2}$ for $k>0$.
+
+Now $\int \frac{dx}{x^{1/2}} = \int k dt$ $\implies$ $2x^{1/2} = kt + c$ and thus $x = (\frac{k}{2} t + d)^2$.
+
+Using the initial condition $x(0) = 0$ we get that $d=0$.
+
+Thus $x = \frac{k^2 t^2}{4}$ is a good solution. However $x=0$ is also a good solution. In this case we have an example of an ODE which has two solutions given initial condition $x=0$. However: $\dot{x} = F = k \sqrt{x}$ and thus $\frac{dF}{dx} = \frac{k}{2 \sqrt{x}} \rightarrow \infty$ as $x \rightarrow 0$ so $F$ is not $C_1$ at $x=0$.
+
+\vspace{\baselineskip}
+
+Consider now the ODe $\dot{x} = F(x)$ with initial condition $x(0) = x_0$.
+
+Theorem (EuT): If $F: \mathbb{R}^n \rightarrow \mathbb{R}^n$ is $C_1$ then there exists $a>0$ such that $\dot{x} = F(x)$ has a unique solution with $x(0) = x_0$ in the time interval $t \in (-a, a)$ 
+
+\vspace{\baselineskip}
+
+Proof is constructive, lengthy and will be done in steps.
+
+\begin{proof}
+
+We need the concept of Lipschitz continuity. $F:\mathbb{R}^n \rightarrow \mathbb{R}^n$ is Lipschitz continuous in an open set $O$ iff we can find a $k>0$ such that: $$|F(x) - F(y)| \leq k |x-y| \, \, \, \, \forall x,y \in O$$
+
+A function $F$ is locally Lipschitz continuous on $O$ if $\forall x \in O$ there exists a neighbourhood for $O_{\epsilon} \in O$ is which $F$ is Lipschitz continuous.
+
+Lemma: If $F:O\rightarrow \mathbb{R}^n$ is $C_1$ then $F$ is locally Lipschitz in $O$
+
+If $x \in O$ let $O_{\epsilon}$ be some ball centred on $x$ such that $O_{\epsilon} \in O$. Let $x,y$ be any two points $\in O_{\epsilon}$. The straight line between $x,y$ lies inside $O_{\epsilon}$. Let $\Psi(s) = F(x+s(y-x))$. So $\Psi(0) = F(x)$ and $\Psi(1) = F(y)$. Now $F(y) - F(x) = \Psi(1) - \Psi(0) = \int_0^1 \frac{d\Psi(s)}{ds} \, \, ds$. This derivative exists because the line lies inside $O_{\epsilon} \subset O$ so $F$ is differentiable there.
+
+Now $\int_0^1 \frac{d\Psi(s)}{ds} \, \, ds = \int_0^1 \frac{d}{ds} F(x + s(y-x)) \, \, ds = \int_0^1 \frac{\partial F}{\partial x_j} (y_j - x_j)$.
+
+Define $|DF_x| = \sup_{\text{unit vectors n_j}} |\frac{\partial F}{\partial x_j} n_j|$.
+
+An aside: $\frac{\partial F}{\partial x_j}$ can be viewed as a map $\mathbb{R}^n \rightarrow \mathbb{R}^n$. $w_i = \frac{\partial F_i}{\partial x_j} v_j$. If we restrict $v_j$ to be a unit vector. The matrix $\frac{\partial F_i}{\partial x_j}$ exists and is continuous because $F$ is $C_1$.
+
+On a compact set $O_{\epsilon}$ this has a maximum $|DF_x| = \sup_{n} |\frac{\partial F_i}{\partial x_j} n_j|$ exists and is continuous on $O_{\epsilon}$. Now $|DF_x| \leq k$ for some $k>0$. 
+
+So: 
+\begin{align*}
+|F(y) - F(x)| &= | \int_0^1 \frac{\partial F}{\partial x_j} (x_j - y_j)| \\
+&\leq \int_0^1 ds | \frac{\partial F}{\partial x_j} (x_j - y_j)| \\
+&\leq \int_0^1 ds |x-y| |DF_x| \\
+&\leq \int_0^1 ds |y-x| k \\
+&= k |y-x|
+\end{align*}
+
+Thus $F$ is locally Lipschitz continuous.
