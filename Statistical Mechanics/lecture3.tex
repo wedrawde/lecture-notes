@@ -1,0 +1,66 @@
+\begin{center}
+
+Lecture 3
+
+\end{center}
+
+\subsection{Defining Temperature}
+
+$$\pd{S}{U} = \frac{1}{T}$$
+
+Usually, it is conventional to work with $U(S,V,N)$ and use the first law. 
+
+Since $dU = TdS - PdV + \mu dN$:
+$$dU(S,V,N) = \left(\pd{U}{S}\right)_{V,N} dS + \left(\pd{U}{V}\right)_{S,N} dN + \left(\pd{U}{N}\right)_{S,V} dN$$
+
+Here $T = \left(\pd{U}{S}\right)_{V,N}$ and $P = - \left(\pd{U}{V}\right)_{S,N}$ and $\mu = \left(\pd{U}{N}\right)_{S,V}$
+
+\subsection{Thermodynamic Potentials}
+
+To describe a thermodynamic system requires specifying $S(X_i)$, i.e. the entropic fundamental relation, or equivalently, $U(S. X_i^{\text{other}})$. But working with these extensive variables is a bit unintuitive. We usually work with thermodynamic potentials adapted to the $Z_i$.
+
+\begin{enumerate}
+\item Free energy $(F, A)$, which is not the same as internal energy. $A(T, X_i) = U - TS$.
+
+Specifying $(T,A)$ uniquely specifies the thermodynamic system. Usually, thermodynamic potentials are determined by a Legendre transformation: $$\frac{A}{T} = \frac{U}{T} - S$$
+
+\item Enthalpy: $H(P,S,X_i) = U + PV$
+\item Gibbs potential: $G(T,P,X_i) = U - TS + PV$
+\end{enumerate}
+
+Theorem: For a mechanically isolated system at a fixed temperature the free energy never decreases. More generally: $dA = -S dT - PdV + \mu dN$. This follow from $A = U - TS$ $\implies$ $dS = dU - SdT - TdS$ and the first law.
+
+Theorem: For a mechanically isolated system at constant temperature and pressure, the Gibbs potential never decreases. $dG = -S dT + VdP + \mu dN$
+
+\begin{itemize}
+\item If you are given all $X_i$, use entropy $S(X_i)$
+\item If you are given $T, X_i^{\text{other}}$, then use $F(T, X_i)$
+\item If you have $P, X_i^{\text{other}}$, then use $H(P,S,X_i)$
+\item If you have $P, T, X_i^{\text{other}}$, then use $G(T, P, X_i)$
+\end{itemize}
+
+\subsubsection*{Example}
+
+First law $dU = TdS + \sum_i Y_i dX_i$ then $dF = -SdT + \sum_i Y_i dX_i$. Thus: $$S(T, X_i) = - \left(\pd{F}{T}\right)X_i$$ and $$Y_i(T,X_i) = - \pd{F}{X_i}$$
+
+\subsection{Maxwell's Relations}
+
+First law: $dU = TdS - PdV + \mu dN$ now we see: $$T = \left(\pd{U}{S}\right)_{V,N}$$
+$$-P = \left(\pd{U}{V}\right)_{S,N}$$
+$$\mu = \left(\pd{U}{N}\right)_{V,S}$$
+
+Now $$\left(\pd{T}{V}\right)_N = \pd{}{V}\left(\pd{U}{S}\right)_N = \pd{}{S} \left(\pd{U}{V}\right) = - \left(\pd{P}{S}\right)_N$$
+
+And $$\left(\pd{T}{N}\right)_V = \left(\pd{U}{S}\right)_V$$
+
+These give Maxwell's relations:
+
+\begin{equation}
+\left(\pd{T}{V}\right)_N = - \left(\pd{P}{S}\right)_N
+\end{equation}
+\begin{equation}
+\left(\pd{T}{V}\right)_V = \left(\pd{U}{S}\right)_V
+\end{equation}
+\begin{equation}
+\left(\pd{P}{N}\right)_S = - \left(\pd{U}{V}\right)_S
+\end{equation}

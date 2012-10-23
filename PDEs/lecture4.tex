@@ -1,0 +1,55 @@
+\begin{center}
+
+Lecture 4
+
+\end{center}
+
+Consider: $$a(x,y) u_x + b(x,y) u_y + c(x,y) u = d(x,y)$$.
+
+The characteristic projections are: $\frac{dx}{dt} = a$, $\frac{dy}{dt} = b$ which gives $\frac{dy}{dx} = \frac{b}{a}$.
+
+Along the characteristic projections: $\frac{du}{dt} = u_x \frac{dx}{dt} + u_y \frac{dy}{dt} = a u_x + b u_y = d - cu$. These are now ODEs.
+
+\subsubsection*{Example}
+
+Solve $u_x + u_y + u = 1$ with $u=x^2$ on $y=0$.
+
+\vspace{\baselineskip}
+
+The idea is to transform to new coordinated $(\nu, \xi)$ where $\nu$ is constant along the characteristic projections. The transformed equations will then be an ODE in $\xi$. The characteristic projections are then $\frac{dy}{dx} = 1$ $\implies$ $x-y = \text{constant}$ so take $\nu = x-y$.
+
+Chose $\xi = x$ (independent of $\nu$). The chain rule gives $u_x = u_{\xi} \xi_x + u_{\nu} \nu_x = u_{\xi} + u_{\nu}$ and $u_y = u_{\xi} \xi_y + u_{\nu} \nu_y = - u_{\nu}$.
+
+So the PDE is $u_{\xi} + u_{\nu} - u_{\nu} + u = 1$ which gives $u_{\xi} = 1 - u$. Integrate to get: $$\log (1-u) = -\xi + f(\nu)$$.
+
+Thus $$u(\nu, \xi) = 1 - g(\nu) e^{\xi}$$
+
+Transform back to $(x,y)$ coordinates to get the general solution: $$u(x,y) = 1 - g(x-y) e^{-x}$$
+
+To find the particular solution, fix $g$ with the Cauchy data: $u(x,0) = 1 - g(x) e^{-x} = x^2$ $\implies$ $g(x) = (1-x^2)e^x$. Thus the particular solution is: $$u(x,y) = 1 - (1-(x-y)^2) e^{x-y} e^{-x} = 1 - (1-(x-y)^2) e^{-y}$$
+
+\subsection{Acceleration Waves}
+
+Another property of characteristic projections: curves across which $u_x$ or $u_y$ can be discontinuous. 
+
+\subsubsection*{Example}
+
+Solve: $u_x + cu_y = 0$ with $c$ constant and $u(x,0) = -x$ for $x<0$ and $u(x,0) = x$ for $x>0$.
+
+\vspace{\baselineskip}
+
+The characteristic projections satisfy $\frac{dx}{dt} = 1$, $\frac{dy}{dt} = c$ and along them $\frac{du}{dt} = 0$. So $u = \text{const}$ along the characteristic projections which are straight lines $y=cx + \text{const}$
+
+The discontinuity in $u_x$ at $x=0$ propagates along the line $y=cx$. This is a ``weak solution'', i.e. one which satisfies the PDE everywhere except on some curve(s). This is as opposed to a classical solution where $u, u_x, u_y$ exist everywhere and satisfy the PDE.
+
+Claim: Any curve $C = (x(\tau), y(\tau))$ across which $u_x$ or $u_y$ are discontinuous but $u$ is continuous must be a characteristic projection.
+
+\begin{proof}
+
+Differentiate along $C$: $\frac{du^{+}}{d\tau} = u_x^{+} \frac{dx}{d\tau} + u_y^{+} \frac{dy}{d\tau}$ and $\frac{du^{-}}{d\tau} = u_x^{-} \frac{dx}{d\tau} + u_y^{-} \frac{dy}{d\tau}$ where $u^+, u^-$ are the limiting values as $C$ is approached from either side. Since $u$ is continuous across $C$, thus $u^+ = u^-$ so $\frac{d}{d\tau} (u^+ - u^-) = 0$. Therefore: $$\underbrace{(u^-_x + u^+_x)}_{[u_x]} \frac{dx}{d\tau} + \underbrace{(u^-_y + u^+_y)}_{[u_y]} \frac{dy}{d\tau} = 0$$ with $[u_x]$ being the ``jump'' in $u_x$.
+
+Both $u^+$ and $u^-$ are classical solutions of the PDE expect on $C$ so $a[u_x] + b[u_y] + \underbrace{c[u]}_{=0} = 0$. These two equations are a pair of homogeneous linear equations for $[u_x]$ and $[u_y]$. Hence $[u_x]$, $[u_y]$ can only be none zero if $$0 = \begin{pmatrix} \frac{dx}{d\tau} & \frac{dy}{d\tau} \\ a & b \end{pmatrix} = b \frac{dx}{d\tau} - a \frac{dy}{d\tau}$$
+
+That is, along $C$, $\frac{dy}{dx} = \frac{b}{a}$ and thus $C$ is a characteristic projection.
+
+\end{proof} 

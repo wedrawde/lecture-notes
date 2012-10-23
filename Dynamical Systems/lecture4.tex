@@ -28,7 +28,7 @@ Theorem (EuT): If $F: \mathbb{R}^n \rightarrow \mathbb{R}^n$ is $C_1$ then there
 
 Proof is constructive, lengthy and will be done in steps.
 
-\begin{proof}
+%\begin{proof}
 
 We need the concept of Lipschitz continuity. $F:\mathbb{R}^n \rightarrow \mathbb{R}^n$ is Lipschitz continuous in an open set $O$ iff we can find a $k>0$ such that: $$|F(x) - F(y)| \leq k |x-y| \, \, \, \, \forall x,y \in O$$
 
@@ -40,7 +40,7 @@ If $x \in O$ let $O_{\epsilon}$ be some ball centred on $x$ such that $O_{\epsil
 
 Now $\int_0^1 \frac{d\Psi(s)}{ds} \, \, ds = \int_0^1 \frac{d}{ds} F(x + s(y-x)) \, \, ds = \int_0^1 \frac{\partial F}{\partial x_j} (y_j - x_j)$.
 
-Define $|DF_x| = \sup_{\text{unit vectors n_j}} |\frac{\partial F}{\partial x_j} n_j|$.
+Define $|DF_x| = \sup_{\text{unit vectors $n_j$}} |\frac{\partial F}{\partial x_j} n_j|$.
 
 An aside: $\frac{\partial F}{\partial x_j}$ can be viewed as a map $\mathbb{R}^n \rightarrow \mathbb{R}^n$. $w_i = \frac{\partial F_i}{\partial x_j} v_j$. If we restrict $v_j$ to be a unit vector. The matrix $\frac{\partial F_i}{\partial x_j}$ exists and is continuous because $F$ is $C_1$.
 
