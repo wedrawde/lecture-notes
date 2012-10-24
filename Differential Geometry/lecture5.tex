@@ -1,0 +1,64 @@
+\begin{center}
+
+Lecture 5
+
+\end{center}
+
+\subsection{Evolute and Involute of a plane curve}
+
+Let $\alpha: I \rightarrow \mathbb{R}^2$ be a unit speed smooth curve with curvature $\kappa: I \rightarrow \mathbb{R}$. Assume $\kappa(s) \neq 0$ for all $s \in I$. Then $\rho(s) = \frac{1}{\kappa(s)}$ is called the radius of curvature, and $$e(s) = \alpha(s) + \frac{1}{\kappa(s)} n(s)$$ the center of curvature. The circle of radius $\rho(s)$ around $e(s)$ is the best circle approximation of $\alpha$ at $\alpha(s)$ (agrees with $\alpha$ at $\alpha(s)$) up to second order of derivative. The new curve $e: I \rightarrow \mathbb{R}^2$ is called the evolute of $\alpha$.
+
+$$e'(s) = \alpha'(s) + \frac{1}{\kappa(s)} n'(s) - \frac{\kappa'(s)}{\kappa^2(s)} n(s)$$
+$$n'(s) = t'(s) \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} = \kappa(s) n(s) \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} = \kappa(s) t(s) \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}^2 = -\kappa(s) t(s)$$
+
+Thus: $\alpha'(s) = t(s) \implies e'(s) = - \frac{\kappa'(s)}{\kappa^2(s)} n(s)$ and $||e'(s)|| = \frac{|\kappa'(s)|}{\kappa^2 (s)}$
+
+Conclusions:
+\begin{itemize}
+\item $e:I\rightarrow \mathbb{R}^2$ is generally not arc legnth parameterised
+\item $e'(s) = 0 \Leftrightarrow \kappa'(s) = 0$ evolute is regular iff $\alpha$ has no vertices. At a vertex $\alpha(s)$ of $\alpha$, the point $e(s)$ of $e$ is singular
+\item If $e$ is regular then its tangent is parallel to $n(s)$
+\end{itemize}
+
+\subsubsection*{Example: Ellipse}
+
+$\alpha(s) = (a \cos s, b \sin s)$ and thus $||\alpha'(s)|| = \sqrt{a^2 \cos^2 s + b^2 \sin^2 s}$
+
+Thus $$n(s) = \frac{1}{||\alpha'(s)||} (-a \cos s, -b \sin s)$$ and $$\kappa(s) = \frac{ab}{||\alpha'(s)||^3}$$
+
+Now we can calculate $e(s)$:
+$$e(s) = \alpha(s) + \frac{1}{\kappa(s)} n(s) = \left(\left(a - \frac{a^2 \sin^2 s + b^2 \cos^2 s}{a}\right)\cos s, \left(b - \frac{a^2 \sin^2 s + b^2 \cos^2 s}{b}\right) \sin s\right)$$
+
+Remark: The evolute of a circle is just the center of the circle.
+
+\vspace{\baselineskip}
+
+We have seen the following: One can associate to every curve $\alpha$ the evolute $e$. Can we reverse this, i.e., for a given curve $\beta:I\rightarrow \mathbb{R}^2$ find another curve $\gamma: I \rightarrow \mathbb{R}^2$ such that $\beta$ is its evolute.
+
+We can: define $$\gamma(s) = \beta(s) - l(s)t(s)$$ where $$l(s) = \int_{s_0}^s || \beta '(t)|| dt$$
+
+We call $\gamma$ the involute of $\beta$.
+
+A proof that $\beta$ is the evolute of $\gamma$ can be found in Woodward-Bolton.
+
+\subsubsection*{Example: cycloid}
+
+Let $\beta(u) = (u - \sin u, \cos u - 1)$
+
+Let $s_0 = \pi$. Since: $\beta'(u) = (1- \cos u, - \sin u) = 2 \sin (\frac{u}{2}) (\sin (\frac{u}{2}), - \cos (\frac{u}{2}))$ and $t(u) = (\sin (\frac{u}{2}), - \cos (\frac{u}{2}))$. Thus $||\beta'(u)|| = 2 \sin (\frac{u}{2})$ with $u \in [0, 2\pi]$.
+
+Thus: $$l(u) = \int_{s_0 = \pi}^u 2 \sin (\frac{u}{2}) dt = -4 \cos (\frac{u}{2})$$
+
+Then $\gamma(u) = \beta(u) - l(u) t(u) = (u - \sin u, \cos u - 1) + 4 \cos (\frac{u}{2}) (\sin (\frac{u}{2}), - \cos (\frac{u}{2})) = \ldots = (u + \sin u, -3 - \cos u)$.
+
+Now $l(u) = (u-\pi - \sin (u-\pi), \cos(u-\pi) -1) + (\pi, -2) = (v-\sin v, \cos v -1) + (\pi, -2)$ with $v=u-\pi$
+
+Thus $\gamma$ is again a cycloid translated by $(\pi, -2)$.
+
+\section{Curves in $\mathbb{R}^3$}
+
+Let us first introduce curvature for curves in $\mathbb{R}^n$.
+
+Let $\alpha : I \rightarrow \mathbb{R}^n$ be a unit speed curve, $n\geq 3$. Then the curvature of $\alpha$ at $\alpha(s)$ is defined as $$\kappa(s) = ||t'(s)|| = ||\alpha''(s)|| \geq 0$$
+
+Curvature of a curve in $\mathbb{R}^n$ does not change sign and is always $\geq 0$ and is the second derivative of $\alpha$.

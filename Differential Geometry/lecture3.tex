@@ -26,18 +26,20 @@ Note: if you traverse the circle clockwise you obtain: $\frac{-1}{r}$
 
 Let $\alpha(u) = (x(u), y(u))$. Recall the arc length parameter for $\alpha$, $s = l(u) = \int_{u_0}^u || \alpha'(t)|| dt$. Note: $\frac{ds}{du} = || \alpha'(u)||.$
 
-For calculating $\kappa$ we use $\kappa(s) = \frac{dt}{ds} \cdot n(s)$. Here $t(u) = \frac{\alpha'(u)}{||\alpha'(u)||} = \frac{(x'(u), y'(u))}{\sqrt{(x'(u))^2 + (y'(u))^2}}$
+For calculating $\kappa$ we use $\kappa(s) = \frac{dt}{ds} \cdot n(s)$. Here $$t(u) = \frac{\alpha'(u)}{||\alpha'(u)||} = \frac{(x'(u), y'(u))}{\sqrt{(x'(u))^2 + (y'(u))^2}}$$
 
-So now $n(u) = \frac{(-y'(u), x'(u))}{\sqrt{(x'(u))^2 + (y'(u))^2}}$.
+So now $$n(u) = \frac{(-y'(u), x'(u))}{\sqrt{(x'(u))^2 + (y'(u))^2}}$$
 
-Also $\frac{dt}{ds} = \frac{dt}{du} \frac{du}{ds} = \frac{1}{||\alpha'(u)||} \frac{dt}{du} = \frac{1}{\sqrt{(x'(u))^2 + (y'(u))^2}} \frac{d}{du} \left(\frac{(x'(u), y'(u))}{\sqrt{(x'(u))^2 + (y'(u))^2}}\right)$
+Also $$\frac{dt}{ds} = \frac{dt}{du} \frac{du}{ds} = \frac{1}{||\alpha'(u)||} \frac{dt}{du} = \frac{1}{\sqrt{(x'(u))^2 + (y'(u))^2}} \frac{d}{du} \left(\frac{(x'(u), y'(u))}{\sqrt{(x'(u))^2 + (y'(u))^2}}\right)$$
 
-So $\kappa = \frac{dt}{ds} \cdot n(s) = \frac{x'(u) y''(u) - x''(u) y'(u)}{((x'(u))^2 + (y'(u))^2)^{3/2}}$
+So $$\kappa = \frac{dt}{ds} \cdot n(s) = \frac{x'(u) y''(u) - x''(u) y'(u)}{((x'(u))^2 + (y'(u))^2)^{3/2}}$$
 
 \subsubsection*{Example: Ellipse}
 
 $\alpha (u) = (a \cos u, b \sin u)$ $\implies$ $\alpha'(u) = (- a \sin u, b \cos u)$.
 
-So $\kappa = \frac{(-a \sin u)(-b \sin u) - (-a \cos u)(b \cos u)}{(a^2 \sin^2 u + b^2 \cos^2 u)^{3/2}} = \frac{ab}{(a^2 \sin^2 u + b^2 \cos^2 u)^{3/2}}$
+So $$\kappa = \frac{(-a \sin u)(-b \sin u) - (-a \cos u)(b \cos u)}{(a^2 \sin^2 u + b^2 \cos^2 u)^{3/2}} = \frac{ab}{(a^2 \sin^2 u + b^2 \cos^2 u)^{3/2}}$$
 
-\textbf{Fundamental theorem of local theory of plane curves}: Given a smooth function $\kappa : I \rightarrow \mathbb{R}$ , $I \subset \mathbb{R}$ an open interval, $u_0 \in I$, $a \in \mathbb{R}^2$, $v_0 \in \mathbb{R}^2$ a unit vector. Then ther exists a unique smooth unit speed curve $\alpha I : \rightarrow \mathbb{R}^2$ with curvature $\kappa$, satisfying $\alpha(u_0) = a$ and $\alpha'(u_0) = v_0$.
+\vspace{\baselineskip}
+
+\textbf{Fundamental theorem of local theory of plane curves}: Given a smooth function $\kappa : I \rightarrow \mathbb{R}$ , $I \subset \mathbb{R}$ an open interval, $u_0 \in I$, $a \in \mathbb{R}^2$, $v_0 \in \mathbb{R}^2$ a unit vector. Then there exists a unique smooth unit speed curve $\alpha : I \rightarrow \mathbb{R}^2$ with curvature $\kappa$, satisfying $\alpha(u_0) = a$ and $\alpha'(u_0) = v_0$.
