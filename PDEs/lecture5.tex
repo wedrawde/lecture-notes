@@ -1,0 +1,41 @@
+\begin{center}
+
+Lecture 5
+
+\end{center}
+
+\subsubsection*{Example}
+
+Solve $xu_x + yu_y = (x+y)u$ with $u=1$ on $x=1$ for $1<y<2$.
+
+\vspace{\baselineskip}
+
+Using method 1, the data can be written in parametric form as $x(s,t) = 1$, $y(s,0) = s$, $u(s,0)=1$ with $s \in [1,2]$.
+
+The characteristic projections are $\frac{dx}{dt} = x$, $\frac{dy}{dt} = y$.
+
+Now we solve these for the variables: $x = A e^t$ and using the initial conditions $A=1 \implies x = e^t$. Doing similarly for $y$ gives $y = s e^t$ and thus $y = sx$ (straight line through 0).
+
+Now: $\frac{du}{dt} = (x+y)u = (1+s) e^t u$ and thus $\log u - \log 1 = (1+s)e^t - (1+s)e^0$ $\implies$ $u(s,t) = \exp \left( (1+s) (e^t -1)\right)$. Now we can go back to $x,y$ to get the solution: $$u(s,y) = \exp \left(\left(1 + \frac{y}{x}\right)(x-1)\right)$$
+
+\subsection{Quasilinear Equations}
+
+A quasilinear equation looks like $a(x,y,u)u_x + b(s,y,u)u_y = c(c,y,u)$ where $u$ is prescribed on a plane curve $\Gamma$. The solution surface is $u(x,y) - u = 0$.
+
+So the normal to the surface is $(u_x, u_y, -1) = \vec{n}$. The PDE just says $(a,b,c) \cdot \vec{n} = 0$. So $(a,b,c)$ is in the tangent plane of the surface. Hence a curve $(x(t), y(t), u(t))$ lies in the surface providing $\frac{dx}{dt} = a(x,y,u)$, $\frac{dy}{dt} = b(x,y,u)$ and $\frac{dy}{dt} = c(x,y,u)$. Such a curve is called a characteristic.
+
+The characteristics still have the property that knowing $u$ on them doesn't determine it anywhere else.
+
+\subsubsection*{Example}
+
+Find the solution surface to $(y+u)u_x + yu_y = x-y$ that contains the curve $y=1$, $u=1+x$. The boundary data are $x(x,0) = s$, $y(s,0) - 1$ and $u(s,0) = 1+s$. The characteristic equations are now: $\frac{dx}{dt} = y + u$, $\frac{dy}{dt} = y$, $\frac{du}{dt} = x-y$.
+
+To solve start with the $y$ equation: $y = e^t$
+
+Now use the $u$ equation: $\frac{d^2 u}{dt^2} = \frac{dx}{dt} - \frac{dy}{dt} = y + u - y = u$ Now we solve $\frac{d^2 u}{dt^2} = u$ to give $u = Ae^t + B e^{-t}$.
+
+Finally: $\frac{dx}{dt} = y + u = (A+1)e^t + B e^{-t}$ and thus $x = (A+1)e^t - Be^{-t} +C$. Now use initial data $s=(A+1) -B +C$ and $1+s = A+B$ and using $\frac{du}{dt}$ we get $Ae^t - Be^{-t} = Ae^t - Be^{-t} + C$ $\implies C = 0$.
+
+Hence: $A=s$ and $B=1$. Thus $x=(s+1)e^t - e^{-t}$ and $u=se^t + e^{-t}$. Eliminating $s,t$ gives: $u(x,y) = \frac{2}{y} + x - y$.
+
+The domain of definition here is $y>0$

@@ -1,0 +1,68 @@
+\begin{center}
+
+Lecture 5
+
+\end{center}
+
+\subsection{Overview of types of objects in QM}
+
+\begin{enumerate}
+\item Numbers and functions (scalars)
+\item Vectors $\ket{v}$ and adjoint vector $\bra{v}$.
+\item Linear operators (these `live' in Hilbert space)
+\end{enumerate}
+
+Physical examples of these are:
+\begin{enumerate}
+\item Probability amplitude in $\mathbb{C}$, inner product of two vectors $\braket{v|w}$, norm $|v| = \sqrt{\braket{v|v}} \in \mathbb{R}$
+\item State of a quantum system
+\item Observables (Hermitian) and transformation (Unitary)
+\end{enumerate}
+
+Representation in n-dimensional Hilbert space:
+\begin{itemize}
+\item Specify an orthonormal basis $\set{\ket{j}} = \set{\ket{1}, \ket{2}, \ldots,\ket{n}}$ and $\braket{i|j} = \delta_{ij}$
+\item A vector $\ket{v} = \displaystyle \sum_{j=1}^{n} v_j \ket{j}$ which we represent by an n-tuple: $\begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix}$
+\item The adjoint $\bra{v} = \displaystyle \sum_{j=1}^{n} v_j^{*} \bra{j}$ which we represent by an n-tuple: $\begin{pmatrix} v_1^{*} ,& v_2^{*} ,& \cdots ,& v_n^{*} \end{pmatrix}$
+\end{itemize}
+
+The bracket acts as: $$\braket{v|v} = \begin{pmatrix} v_1^{*}  ,& v_2^{*} ,& \cdots ,& v_n^{*} \end{pmatrix} \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix} = \sum_{j=1}^{n} |v_j|^2$$
+
+The allowed operations on vectors are:
+
+\begin{itemize}
+\item Addition: $\ket{v} + \ket{w} = \sum_j (v_j + w_j)\ket{j}$
+\item Scalar multiplication: $\alpha \ket{v} = \sum_j (\alpha v_j) \ket{j}$
+\end{itemize}
+
+The formulas for $\bra{v} + \bra{w}$ and $\alpha \bra{w}$ are similar. $\bra{v} + \ket{w}$ is ill defined.
+
+\begin{itemize}
+\item Inner product: $\braket{v|w}$ is a scalar.
+\item Outer product: $\ket{v}\bra{w}$ is an operator (matrix).
+\end{itemize}
+
+How do we get a coefficient $v_k$ in terms of $\ket{v}$ and $\set{\ket{j}}$? Use that: $$\braket{k|v} = \sum_j v_j \underbrace{\braket{k|j}}_{\delta_{ij}} = v_k$$ $$\implies \ket{v} = \sum_j \ket{j} \braket{j|v}$$
+
+Useful properties of inner products:
+
+\begin{itemize}
+\item Schwarz identity: $|\braket{v|w}| \leq |v| \cdot |w|$
+\item Triangle inequality: $|v+w| \leq |v| + |w|$
+\end{itemize}
+
+\subsection{Linear Operators}
+
+An operator $\hat{O}$ is an instruction for transforming a given vector $\ket{v}$ into another vector $\ket{v'}$. That is $\hat{O} \ket{v} = \ket{v'}$ and $\bra{v} \hat{O} = \bra{v'}$
+
+A linear operator satisfies
+\begin{itemize}
+\item $\hat{O} (a \ket{v} + b \ket{w}) = a \hat{O} \ket{v} + b \hat{O} \ket{w}$
+\item $(a \ket{v} + b \ket{w}) \hat{O} = a \ket{v} \hat{O} + b \ket{w} \hat{O}$
+\end{itemize}
+
+Note: once we know $\hat{O} \ket{j} = \ket{j'}$ for basis vectors we automatically know: $$\hat{O} \ket{v} = \hat{O} \left(\sum_j v_j \ket{j}\right) = \sum_j v_j \hat{O} \ket{j} = \sum_j v_j \ket{j'}$$
+
+Examples of linear operators:
+\begin{itemize}
+\item Identity operator: $\hat{I}$ defined by $\hat{I} \ket{v} = \ket{v}$ and $\bra{v} \hat{I} = \bra{v}$ $\forall v$. In n dimensional Hilbert space, this can be represented by the n by n identity matrix.

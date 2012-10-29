@@ -1,0 +1,36 @@
+\begin{center}
+
+Lecture 6
+
+\end{center}
+
+%line 254 in corey's notes
+
+Example: Calculate $\phi$ for a linear charge dist. of length $2d$ and linear charge density $\rho _{L}$.
+We shall take the origin as the centre of the line, and use cylindrical polars.\\
+$$\phi = \int \dfrac{\rho(\vec{r}^\prime)}{|\vec{r}-\vec{r}^\prime|} dV = \int^d _{-d} dz^\prime \dfrac{\rho_{L}}{|\vec{r}-\vec{r}^\prime|}=\int ^d _{-d} dz^\prime \dfrac{\rho_{L}}{[(r-r^\prime)^2(z-z^\prime)^2}]^\frac{1}{2} =\int^d _{-d} dz^\prime \dfrac{\rho _{L}}{[r^2 +(z-z^\prime)^2]^\frac{1}{2}}$$
+We then substitute $t=z^\prime - z$\\
+$$\int^{d-z} _{-d-z} \dfrac{\rho_{L}}{(r^2 + t^2)^\frac{1}{2}} ~dt$$
+now letting $t=r\sinh\theta$, $dt=r\cosh\theta ~d\theta$\\
+$$\int d\theta \rho_{L} = \rho_{L} arcsinh\frac{t}{r}$$
+Now we get:\\
+$\phi=\rho_{L} arcsinh\left(\dfrac{z^\prime -z}{r}\right) \left|^d _{-d} \right.$\\
+$=\rho_{L} \ln\left(\dfrac{z^\prime - z}{r}+\sqrt{\frac{z^\prime-z)^2}{r^2}+1} \right )\left|^{z^\prime =d} _{z^\prime = -d} \right.$\\
+$$=\rho_L \ln(\dfrac{\sqrt{(z-d)^2 +r^2}+d-z}{\sqrt{(z+d)^2 +r^2}-(d+z)})$$
+For $z>>d,r$ then $(z-d)^2 >>r^2 \Rightarrow \sqrt{(z-d)^2 -r^2} \approx (z-d)(1+\frac{r^2}{2(z-d)^2})$\\
+So $\phi \approx \rho_{L} \ln \frac{z+d}{z-d} \approx \rho_L \ln(1+\frac{2d}{z-d}) \approx \rho \frac{2d}{z-d}$\\ 
+\\
+
+\subsection{Electric Field Lines and Equipotentials}
+
+Theses act as aids to visualization.
+
+\textbf{Electric Field Lines} are curves such that $\vec{E}$ is tangent to the cruve at each point. \textbf{Equipotential Surfaces} are the surfaces for $\phi = \text{constant}$. Electric field lines start and end on charges. Equipotentials are perpendicular to field lines, because $\Nab \phi \perp \phi = \text{constant}$.
+
+\subsubsection*{Example}
+
+$\vec{E} = \vec{E}_0$ gives field lines which are straight in the direction of $\vec{E}_0$. For $\vec{E} = \frac{q}{r^2} \vec{e}_r$ with field lines going radially out and equipotentials being spheres.
+
+\subsection{Dipoles}
+
+saw in previous example that far away, $\phi \approx \frac{q}{r}$ $\implies$ $\vec{E} \approx \frac{q}{r^2}\vec{e}_r$. What happens if the total charge vanishes? The simplest example of this is a dipole. Consider a 

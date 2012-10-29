@@ -1,0 +1,39 @@
+\begin{center}
+
+Lecture 5
+
+\end{center}
+
+Now we can proove the Existance and Uniqueness Theorem. (That is: there exists a unique solution $\dot{x} = F(x)$ with initial condition $x(0) = x_0$ for $t \in [-a, a]$ for some $a > 0$ if $F$ is $C_1$)
+
+\begin{proof}
+
+Assumptions:
+\begin{enumerate}
+\item F is $C_1$ on $O_{\rho}$ where $\rho$ is a closed ball center on $x_0$.
+\item We have shown that $F$ is Lipschitz continous on $O_{\rho}$. That is $|F(y) - F(x)| < k |y-x|$.
+\item Since $F$ is continuous on compact $O_{\rho}$ it has a maximum value there. That is $|F(x)| \leq M$
+\item Given this we will take $a < \text{min} \left\{\frac{\rho}{M}, \frac{1}{k}\right\}$
+\end{enumerate}
+
+Prove ``constructively'', construct an infinite sequence of functions $u^i (t)$ for $i = 1,2,\ldots,\infty$. Such that $\lim_{i\rightarrow \infty} u^i(t) = u(t)$ where $x(t) = u(t)$ solves the differential equation.
+
+We need one more Lemma: Suppose $u^k : \underbrace{J}_{\mathclap{For t \in [-a, a]}} \rightarrow \mathbb{R}^n$ for $k=0,1,2,\ldots,\infty$ is a sequence of continuous functions such that given any $\epsilon > 0$ there exists $N$ such that $p,q > N$ we have $\max{t \in J} | u^p(t) - u^q(t) | < \epsilon$ then there exists $u$ such that $\max_{t \in J} |u_k(t) - u(t)| \rightarrow 0$ as $k \rightarrow \infty$.
+
+We shall construct a sequence of continous functions $u^k (t)$ for $k=0,1,2,\ldots,\infty$ using Picard iteration. To get a clue about how we do this turn our ODE into an integral equation.
+
+\vspace{\baselineskip}
+
+Consider the equation: $x(t) = x_0 + \int_0^t F(x(s)) \,\, ds$ Differentiate with respect to $t$: $\dot{x} = F(x(t))$ which is the equation we want to solve. The solution to the integral equation is the solution to the differential equation, but also: $x(0) = x_0 + \int_0^0 F(x(s)) \, \, ds = x_0$ so the integral equation also implies the initial condition $x(0) = x_0$.
+
+Define the Picard iteration. Define a sequence of functions: $$u^{k+1}(t) = x_0 + \int_0^t F(u^k(s)) \, \, ds$$ define $u^0(t) = x_0$
+
+To be able to use that $F$ is $C_1$ and Lipschitz continuous we need that $u^k(s) \in O_{\rho}$ $\forall k$ and all relevant $s$. $u^0(t) = x_0 \in O_{\rho}$ Now $$u^1(t) = x_0 + \int_0^t F(u^0(s)) \, \, ds$$.
+
+Consider $$|u^1(t) - x_0| = |\int_0^t F(u^0(s)) \, \, ds| \leq \int_0^t |F(u^0(s))| \, \, ds \leq M \int_0^t ds \leq M|t|$$
+
+We know that $|F(y)| < M$ $\forall y \in O_{\rho}$. Now $t\in[-a, a]$ so $|t| < a \leq \text{min} \left\{\frac{\rho}{M}, k\right\} \leq \frac{\rho}{M}$. Thus $$u^1 - x_0 \leq \frac{\rho}{M} M = \rho$$
+
+Now $$|u^{k+1} - x_0| = |\int_0^t F(u^k(s)) \, \, ds| \leq \int_0^t |F(u_k(s))| ds \leq M \int_0^t ds = Mt \leq \rho$$
+
+If $u^k(s) \in O_{\rho}$ for $|s| < |t| < a$ then $|F(u^k(s))| < M$ $\implies$ $u^{k+1} (t) \in O_{\rho}$ for $|t| < a$.

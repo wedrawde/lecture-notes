@@ -34,6 +34,8 @@ We need the concept of Lipschitz continuity. $F:\mathbb{R}^n \rightarrow \mathbb
 
 A function $F$ is locally Lipschitz continuous on $O$ if $\forall x \in O$ there exists a neighbourhood for $O_{\epsilon} \in O$ is which $F$ is Lipschitz continuous.
 
+\begin{proof}
+
 Lemma: If $F:O\rightarrow \mathbb{R}^n$ is $C_1$ then $F$ is locally Lipschitz in $O$
 
 If $x \in O$ let $O_{\epsilon}$ be some ball centred on $x$ such that $O_{\epsilon} \in O$. Let $x,y$ be any two points $\in O_{\epsilon}$. The straight line between $x,y$ lies inside $O_{\epsilon}$. Let $\Psi(s) = F(x+s(y-x))$. So $\Psi(0) = F(x)$ and $\Psi(1) = F(y)$. Now $F(y) - F(x) = \Psi(1) - \Psi(0) = \int_0^1 \frac{d\Psi(s)}{ds} \, \, ds$. This derivative exists because the line lies inside $O_{\epsilon} \subset O$ so $F$ is differentiable there.
@@ -56,3 +58,5 @@ So:
 \end{align*}
 
 Thus $F$ is locally Lipschitz continuous.
+
+\end{proof}

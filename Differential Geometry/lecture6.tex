@@ -1,0 +1,52 @@
+\begin{center}
+
+Lecture 6
+
+\end{center}
+
+\subsection{The Serret-Frenet Formulas}
+
+Let $\alpha : I \rightarrow \mathbb{R}^3$ be a smooth unit speed curve. Then $t(s) = \alpha'(s)$ is a unit tangent vector. Differentiating $t(s) \cdot t(s) = 1$, we have $t'(s) \cdot t(s) = 0$ and thus $\underbrace{t'(s)}_{\alpha''(s)}$ is perpendicular to $\underbrace{t(s)}_{\alpha'(s)}$. Since $\kappa(s) = ||t'(s)||$, the vectors $t(s)$, $t'(s)$ span a plane, the osculating plane of $\alpha$ at $\alpha(s)$  if $\kappa(s) \neq 0$. In this case, define the unit normal vector: $$n(s) = \frac{t'(s)}{||t'(s)||}$$
+
+To $t$ and $n$ associated tot he unit speed curve: $\alpha: I \rightarrow \mathbb{R}^3$, we add the binormal vector $b(s) = t(s) \times n(s)$, which again has unit length.
+
+Every unit speed curve $\alpha : I \rightarrow \mathbb{R}^3$ with nowhere vanishing curvature carries with it an orthonormal frame, namely $t,n,b : I \rightarrow \mathbb{R}^3$, called the (Frenet) moving frame associated to $\alpha$. Next, we like to express $t',n',b': I \rightarrow \mathbb{R}^3$ in terms of $t,n,b : I \rightarrow \mathbb{R}^3$. We already know $t' = \kappa \cdot n$. Let us consider: $b = t \times n$. $b \cdot b = 1$ $\implies$ $b \cdot b' = 0$ $\implies$ $b$ is perpendicular to $b'$. Now: $$b' = t' \times n + t \times n' = (\kappa n) \times n + t \times n' = t \times n'$$.
+
+Now consider: $$b' \cdot t = (t \times n') \cdot t = \text{det} (t n' t) = 0$$
+
+Conclusion: $b'$ is parallel to $n$. Let $b'(s) = \tau (s) \cdot n(s)$ and call $\tau : I \rightarrow \mathbb{R}$ the torsion of $\alpha$. Finally: $t(s), n(s), b(s)$ are an orthonormal basis with $b = t \times n \implies n = b \times t = - t \times b$. Now: $$n' = - t' \times b - t \times b' = (\kappa n) \times b - \tau(t\times n) = -\kappa t - \tau b$$
+
+This shows the following theorem.
+
+\vspace{\baselineskip}
+
+\textbf{Theorem (Serret-Frenet equations):} Let $\alpha : I \rightarrow \mathbb{R}^3$ be a smooth unit speed curve with curvature $\kappa$ and torsion $\tau$. Then:\[
+\begin{pmatrix}
+t' \\  n' \\  b'
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 & \kappa & 0 \\ - \kappa & 0 & - \tau \\ 0 & \tau & 0
+\end{pmatrix}
+\begin{pmatrix}
+t \\ n \\ b
+\end{pmatrix}
+\]
+
+Let $\alpha: I \rightarrow \mathbb{R}^3$ be a smooth regular curve, not necessarily unit speed, satisfying $(\alpha' \times \alpha'')(u) \neq 0$ $\forall u \in I$. Then $$\kappa = \frac{||\alpha' \times \alpha''||}{||\alpha'||^3}$$ and $$\tau = - \frac{(\alpha' \times \alpha'') \cdot \alpha''}{||\alpha' \times \alpha''||^2}$$
+
+\begin{proof}
+Let $\tilde{\alpha} : J \rightarrow \mathbb{R}^3$ be the corresponding unit speed curve, that is $\alpha(u) = \tilde{\alpha}(s)$ with $s = l(u) = \int_{u_0}^u ||\alpha'(t)|| dt$. We use the following notation: $( \, \,)'$ for $\frac{d}{du}$. Then $\frac{d}{ds} = \frac{du}{ds} \frac{d}{du} = \left(\frac{ds}{du}\right)^{-1} \frac{d}{du} = \frac{1}{||\alpha'(u)||} \frac{d}{du}$.
+
+\begin{tabular}[r|c|c|]
+ & function of $u$ & function of $s$ \\ \hrule
+ curve & $\alpha$ & \tilde{\alpha} \\ \hrule
+ unit tangent vector & $t = \alpha' / ||\alpha'||$ & $\tilde{t} = \frac{d}{ds} \tilde{\alpha}$ \\ \hrule
+ unit normal vector & $n = \frac{t'}{||t'||}$ & $\tilde{n} = (\frac{d}{ds} \tilde{t})/||\frac{d}{ds} \tilde{t}||$ \\ \hrule
+ curvature & $\kappa$ & $\tilde{\kappa}$ \\ \hrule
+ torsion & $\tau$ & $\tilde{\tau}$ \\ \hrule
+ \end{tabular}
+
+ First Sernet-Frenet equation: $\frac{d}{ds} \tilde{t} = \tilde{\kappa}\cdot \tilde{n}$ then $\frac{1}{||\alpha'(u)||} t' = \kappa n$
+
+ \end{proof}
