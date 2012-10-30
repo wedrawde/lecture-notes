@@ -1,0 +1,42 @@
+\begin{center}
+
+Lecture 6
+
+\end{center}
+
+\subsection{Linear Operators}
+
+Recall that in general $\hat{A}\hat{B} \neq \hat{B}\hat{A}$.
+
+Define the commutator: $[\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}$.
+
+\subsection{Example}
+
+The identity operator $\hat{I}$ commutes with any other operator: 
+\begin{align*}
+(\hat{I}\hat{A} - \hat{A}\hat{I})\ket{v} &= \hat{I}\hat{A}\ket{v} - \hat{A}\hat{T}\ket{v} \\
+&= \hat{I} \ket{\hat{A}} - \hat{A}\ket{v} \\
+&= \ket{\hat{A} v} - \ket{\hat{A} v} = 0 \! \forall \ket{v}
+\end{align*}
+
+Inverse of an operator, $\hat{O}$, denoted $\hat{O}^{-1}$ is defined $\hat{O}\hat{O}^{-1} = \hat{I} = \hat{O}^{-1} \hat{O}$. An operator for which there exists an inverse is called invertible.
+
+Matrix elements of an operator $\hat{O}$ in a basis $\set{\ket{j}}$ (in n dimensional Hilbert space, pick an orthonormal basis) an operator is represented by an n by n matrix.
+
+\[\hat{O}=\begin{pmatrix}
+O_{11} & O_{12} & \cdots & O_{1n} \\
+O_{21} & \ddots & & \\
+\vdots & & \ddots &  \\
+O_{n1} & & & O_{nn}
+\end{pmatrix}
+\]
+
+Now $\hat{O} = \sum_{j,k} O_{jk} \ket{j}\bra{k}$ with $O_{ij} = \bra{i}\hat{O}\ket{j}$
+
+\subsection{Projection Operators}
+
+Projection operator for a vector $\ket{j}$ is $\hat{P}_{j} = \ket{j} \bra{j}$. Then $$\hat{P}_j = \ket{j} \underbrace{\braket{j|v}}_{v_j} = \v_j \ket{j}$$ where $\ket{v} = \sum_j v_j \ket{j}$
+
+Now consider $\sum_j \hat{P}_j$. Consider $\forall \ket{v}$: $$\sum_j \hat{P}_j \ket{v} = \sum_j \ket{j} \braket{j|v} = \sum_j v_j \ket{j} = \ket{v}$$ thus $$\sum_j \het{P}_j = \sum_j \ket{j}\bra{j} = \hat{I}$$
+
+To work out the matrix elements of $\hat{P}_j$ we use $(\hat{P}_k)_{ij} = \delta_{ij}\delta_{jk}$. We can see this from $\bra{i}\hat{P}_k\ket{j} = \braket{i|k}\braket{k|j} = \delta_{ik}\delta_{kj}$.

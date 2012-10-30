@@ -1,0 +1,56 @@
+\begin{center}
+
+Lecture 7
+
+\end{center}
+
+Consider two charges $q$ and $-q$ a distance $\epsilon$ appart. Consider the distance from the center of the charges to be $\vec{r}$, the length from $q$ to be $r_{+}$ and the length from $-q$ to be $r_{-}$. Thus $r_{\pm}^2 = r^2 + \frac{1}{4} \epsilon^2 \mp \epsilon r \cos \theta$.
+
+So
+\begin{align*}
+\frac{1}{r_{\pm}} &= \left(r^2 + \frac{1}{4} \epsilon^2 \mp \epsilon r \cos \theta\right)^{-\frac{1}{2}} \\
+&= \frac{1}{r} \left(1 + \frac{1}{4}\frac{\epsilon^2}{r^2} \mp \frac{\epsilon}{r} \cos \theta\right)^{-\frac{1}{2}} \\
+&\approx \frac{1}{r} \left(1 \pm \frac{\epsilon}{2r}\cos \theta\right) \,\, \, \, \text{for} \frac{\epsilon}{r} << 1
+\end{align*}
+
+So $$\phi \approx q \left(\frac{1}{r} \left(1 + \frac{\epsilon}{2r}\right) \right) - \frac{1}{r} \left(1 - \frac{\epsilon}{2r} \cos \theta\right)$$ then $$\phi \approx \frac{q\epsilon \cos \theta}{r^2} + O\left(\frac{\epsilon^2}{r^3}\right)$$ Now consider $\epsilon \cos \theta$ $$\epsilon \cos \theta = \frac{\vec{\epsilon} \cdot \vec{r}}{r^3}$$
+
+So: $$\Phi \approx q \frac{\vec{\epsilon} \cdot \vec{r}}{r^3} + O\left(\frac{\epsilon^2}{r^3}\right)$$
+
+Now let $\epsilon \rightarrow 0$ while holding $q$ fixed.
+
+Define the dipole moment $\vec{p} = q \vec{\epsilon}$. Then 
+
+\begin{equation}
+\phi(\vec{r}) = \frac{\vec{p}\cdot \vec{r}}{r^3}
+\end{equation}
+
+This is the potential for the ideal dipole. Note $\phi ~ \frac{1}{r^2}$ as compared to $\frac{1}{r}$ for a charge. This is important for charge distributions with zero total charge, subleading correction for distribution with $Q_{\text{tot}} \neq 0$.
+
+$$\vec{E} = - \Nab \phi = - \vec{r} \cdot \vec{r} \Nab \left(\frac{1}{|\vec{r}|^3}\right) - \frac{1}{|\vec{r}|^3} \Nab (\vec{p} \cdot \vec{r}) = \frac{3 \vec{p} \cdot \vec{r} \vec{r}}{|\vec{r}|^5} - \frac{\vec{p}}{|\vec{r}|^3}$$
+
+If $\vec{p} = \begin{pmatrix} 0 & 0 & p \end{pmatrix}$ then $$E_x = \frac{3 p z x}{r^5}$$ $$E_y = \frac{3 p z y}{r^5}$$ $$E_z = \frac{3 p z^2}{r^5} - \frac{p}{r^3} = \frac{p (2x^2 - x^2 - y^2)}{r^5}$$
+
+\subsection{Multipole expansion}
+
+Monopole, dipole, quadropole, $\cdots$ We can build a succession of simple charge distributions with increasing rapid falloff for $\phi$. The idea is to use these simple forms for $\phi$ as an approximation to $\phi$ far away from some arbitrary localised charge distribution. That is $$\phi \approx \frac{q}{r} = \frac{2d \lambda}{r}$$ at $r >> d$. We want to see that $\phi = \frac{q}{r} + \frac{\vec{p}\cdot \vec{r}}{r^3} + \cdots$ for some $\vec{p}$
+
+%Stealing from corey
+
+Consider a charge distribution $\rho(\vec{r}^\prime)$ with support in a volume V. We want to approximate $\phi(\vec{r})$ where $|\vec{r}|>>|\vec{r}^\prime|$ for all $\vec{r}^\prime$ in V.
+$$\phi(\vec{r})=\int \dfrac{\rho(\vec{r}^\prime)}{|\vec{r}-\vec{r}^\prime|}~dV,~\text{as we know}$$
+We want to expand $\dfrac{1}{|\vec{r}-\vec{r}^\prime|}$ in powers of $\dfrac{|\vec{r}^\prime|}{|\vec{r}|}$\\
+Recall the Taylor series expansion:\\
+$f(\vec{r}-\vec{r}^\prime)\approx f(x,y,z)-x^\prime\partial_xf-y^\prime \partial_y f- z^\prime\partial_z f+...$\\
+$\approx f(\vec{r}) -\vec{r}^\prime \cdot \vec{\nabla}f(\vec{r})+\frac{1}{2}\vec{r}^\prime \cdot \vec{\nabla}(\vec{r}^\prime \cdot \vec{\nabla} f(\vec{r}))$\\
+So $\dfrac{1}{|\vec{r}-\vec{r}^\prime|} \approx -\vec{r}^\prime \cdot \vec{\nabla}(\frac{1}{|\vec{r}|}) + \frac{1}{2} \vec{r}^\prime \cdot \vec{\nabla}(\vec{r}^\prime\cdot \vec{\nabla}\frac{1}{|\vec{r}|})$\\
+$\vec{\nabla}(\frac{1}{|\vec{r}|})=\frac{-\vec{r}}{|\vec{r}|^3}$, so second approx is:
+$\frac{1}{|\vec{r}-\vec{r}^\prime|}=\vec{1}{|\vec{r}|}+\frac{\vec{r}\cdot\vec{r}}{|\vec{r}^\prime|^3}+\frac{1}{2}\vec{r}^\prime\cdot\vec{\nabla}(\frac{-\vec{r}^\prime \cdot \vec{r}}{|\vec{r}|^3})$ is \\
+$\frac{1}{2} x^\prime _i \pd{}{x_i}(\dfrac{-x^\prime _j x_j}{|\vec{r}|^3})=\frac{1}{2} x^\prime _i (\dfrac{3x_i x_j ^\prime x_j}{|\vec{r}|^5} - \dfrac{x^\prime _j \delta_{ij}}{|\vec{r}|^3})$\\
+$=\frac{1}{2}x^\prime _i x^\prime_j (\dfrac{3x_ix_j}{|\vec{r}|^5}-\dfrac{\delta_{ij}}{|\vec{r}|^3})+\ldots$\\
+$\dfrac{1}{|\vec{r}-\vec{r}^\prime|}=\dfrac{1}{|\vec{r}|}+\dfrac{\vec{r}\cdot\vec{r}^\prime}{|\vec{r}|^3}+\frac{1}{2}(\dfrac{3(\vec{r}^\prime\cdot \vec{r})^2}{|\vec{r}|^5}-\dfrac{\vec{r}^\prime\cdot \vec{r}^\prime}{|\vec{r}|^3})$\\
+So:\\
+$\phi(\vec{r})=\frac{1}{|\vec{r}|}\int \rho(\vec{r^\prime})~dV +\dfrac{\vec{r}}{|\vec{r}|^3} \cdot\int \rho(\vec{r^\prime})\vec{r}^\prime ~dV + \dfrac{1}{2|\vec{r}|^5}\int \rho(\vec{r}^\prime)(3x_i ^\prime x_j ^\prime x_ix_j-x_i^\prime x_i ^\prime x_jx_j) ~dV$\\
+$=\dfrac{1}{\vec{r}}\int \rho(\vec{r}^\prime)~dV+\dfrac{\vec{r}}{|\vec{r}|^3} \cdot\int \rho(\vec{r}^\prime) \vec{r}^\prime ~dV +\dfrac{x_i x_j}{2|\vec{r}|^5}\int \rho(\vec{r}^\prime)(3x_i ^\prime x_j ^\prime -\delta_{ij}x_k ^\prime x_k ^\prime)~dV$\\
+\\
+$$\phi(\vec{r})=\dfrac{q}{|\vec{r}|}+\dfrac{\vec{r}\cdot\vec{p}}{|\vec{r}|^3} + \dfrac{q_{ij}x_i x_j}{2|\vec{r}|^5}+\ldots$$\\

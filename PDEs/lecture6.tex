@@ -1,0 +1,50 @@
+\begin{center}
+
+Lecture 6
+
+\end{center}
+
+Many first order quasilinear PDEs arise from conservation laws.
+
+Think of a continuous model of traffic flow. A one way single lane road with no junctions. Define: $\rho(x,t) = \text{traffic density}$ which is the number of vehicles per unit road and $\phi(x,t) = \text{flux}$ which is the vehicles per unit time passing a point $x$. For an arbitrary segment $[a,b]$ of road, the number of vehicles in $[a,b]$ is $\int_a^b \rho(x,t) \, \, dx$.
+
+Integral conservation law $\frac{d}{dt} \int_a^b \rho(x,t) \, \, dx = \overbrace{\phi(a,t) - \phi(b,t)}^{\text{net flux into} [a,b]}$ (vehicles are neither created nor destroyed).
+
+If $\rho$ is differentiable and $\phi_x$ is continuous then $$\int_a^b \rho_t (x,t) \,\, dx = - \int_a^b \phi_x (x,t) \, \, dx$$
+
+This holds for any interval $[a,b]$ so if the integrands are continous then $\phi_t + \phi_x = 0$ which is the PDE form of the conservation law.
+
+Note: The integral form doesn't require $\rho$ continuous. To complete the model we assume $\phi = \phi(\rho)$ so $\rho_t + \phi'(\rho)\rho_x = 0$. Using our original notation, consider the effect of different functions $c(u)$ in $u_t + c(u) u_x = 0$ with $t>0$ and $u(x,0) = u_0 (x)$. Assume that $c$ and $u_0$ are smooth.
+
+The characteristic equations: $$\frac{dt}{d\tau} = 1, \, \, \, \, \frac{dx}{d\tau} = c(u), \,\,\,\, \frac{du}{d\tau}$$
+
+Note $u$ is constant on characteristic projections, so they are straight lines $\frac{dx}{dt} = c(u)$.
+
+The Cauchy data give $t(s,0) = \rho$ and $x(s,0) = s$ and $u(s,0) = u_0 (s)$. So:
+$$t= \tau , \,\,\,\, u = u_0 (s), \,\,\,\, x = c(u) \tau + x(s,0) = \underbrace{c(u_0(s))}_{F(s)} t + s$$
+
+Notice the slopes of the characteristic projections are given by $F(s)$ at the initial point.
+
+\begin{enumerate}
+\item If $c$ is constant then the equation is a linear PDE and thus all the characteristic projections are parallel and $u(x,t) = u_0(x-ct)$
+\item If $F(s) > 0$ (slopes decreasing) we have $\frac{dt}{dx} = \frac{1}{F(s)}$
+\item If $F(s) < 0$ (slopes increasing) and the characteristic projections will eventually meet, and the partial derivatives will become infinite at the point of intersection
+\end{itemize}
+
+Note $u_x = u_o'(s) s_x$ and $u_y = u_0'(s) s_y$. From $x = F(s) t + s$ we get $1 = F'(s)s_x t + s_x$ when differentiating with respect to $x$ and $0 = F'(s)s_t t + F(s) + s_t$.
+
+Thus \[ \implies \begin{dcases*}
+s_x = \frac{1}{1+F'(s)t} \\
+s_t = \frac{-F(s)}{1+ F'(s) t}
+\end{dcases*}
+\]
+
+Thus on the characteristic projections $u_x$ and $u_t$ blow up at time $t= \frac{-1}{F'(s)}$. So if $c(u_0(s))$ is a decreasing function of $x$ on any interval, there is no classical solution $u(x,t)$ for all $t>0$.
+
+\subsubsection*{Example: Burgers' equation}
+
+Solve the initial value problem $$u_t + u u_x = 0$$ with $t>0$ and $u(x,0) = e^{-x^2}$ and find the time of first blowup.
+
+The characteristic projections are $x = c(u_0(s)) t + s = u_0(s)t+s = e^{-s^2} t + s$. Here $F(s) = e^{-s^2} \implies F'(s) = -2 s e^{-s^2}$.
+
+Thus the blow up is at $t_b = \frac{1}{F'(s)} = \frac{e^{s^2}}{2s}$ and first occurs at $\min_{S} = \frac{e^{1/2}}{\sqrt{2}} \approx 1.17$. Before this the solution is $u(x,t) = e^{-s^2}$ where $s$ solves $x-s = e^{-s^2}t$.

@@ -1,0 +1,61 @@
+\begin{center}
+
+Lecture 5
+
+\end{center}
+
+\section{Probability and Random Walks}
+
+Probability is associated with the frequency of occurrence of an event out of a set of all possible events. We normalize such that the probability is $[0,1]$.
+
+Two useful notations:
+\begin{itemize}
+\item Classical probability - equal a-priori weight to all possible outcomes. If the number of outcomes is $n$ then $p(\text{each outcome}) = \frac{1}{n}$ and thus each outcome is equally likely.
+\item Statistical probability - unequal weights for each outcome determined by the statistical frequency of the occurrence. If we have events indexed by $i$ and in $N$ trials event $j$ appears $n_j$ times then $p(\text{event j}) = \frac{n_j}{N}$.
+\end{itemize}
+
+For mutually exclusive events the probabilities add: $p(\text{event i} \& \text{event j}) = p(\text{event i}) + p(\text{event j})$.
+
+For a finite set of all possible events: $p_i = p(\text{event i})$
+
+\subsection{Random Variables}
+
+Consider a system where the set of possible outcomes are $\set{x_1, x_2, \cdots, x_n}$. The random variable $x$ is defined to be a variable that takes values in $\set{x_1, x_2, \cdots, x_n}$.
+
+Define $p(x_i)$ as the probability that $x$ takes the value $x_i$. For example coin tossing $x_1 = \text{heads}$ and $x_2 = \text{tails}$. If it is a fair coin we will then have: $p(x_1) = \frac{1}{2}$ and $p(x_2) = \frac{1}{2}$.
+
+Generally, the axioms of probability demand: $$0 \leq p(x_i) \leq 1$$ and $$\sum_{i=1}^N p(x_i) = 1$$
+
+We'll see that statistical systems can be characterised by $p(E_i)$ probability of find a system in a state of energy $E_i$.
+
+\subsection{Moments of a probability distribution}
+
+$p(x_i)$ for all $x_i$ defines a probability distribution. The moments are probabilistic averages for a random variable $x$, the $m^{\text{th}}$ moment is $$\underbrace{\bar{x^m} = \braket{x^m}}_{\text{equivalent notation}} = \sum_{i=1}^N x_i^m p(x_i)$$
+
+Usually $\braket{x}$ is called the mean of average (expectation value). $$\braket{x} = \sum_{i=1}^N x_i p(x_i)$$
+
+The second moment $\braket{x^2}$ can be used to define the variance: $$\braket{(\Delta x)^2} = \braket{x^2} - \braket{x}^2 = \sum_{i=1}^N (x_i - \braket{x})^2 p(x_i)$$
+
+While the mean tells us what value $x$ will take on average, the variance $\braket{(\Delta x)^2}$ indicates the fluctuation from the mean (it says how the system departs from average behaviour).
+
+\subsection{Continuous probability distributions}
+
+$x$ is a random variable $x \in [a,b]$ define probability density $p(x)$ to be the probability that $x$ takes values between $x$ and $x+dx$. Then $$\int_a^b p(x) \, \, dx = 1$$ with moments $$\braket{x^m} = \int_a^b x^m p(x) \, \, dx$$ and fluctuations $$\braket{(\Delta x)^m} = \int_a^b (x - \braket{x})^m p(x) \, \, dx$$
+In general $\Delta x = x - \braket{x}$ denotes departure of $x$ from the mean. For a smooth function $f(x)$ 
+$$\braket{f(x)} = \int_a^b f(x) p(x) \, \, dx$$
+
+We can compute individual moments using the formula for $\braket{x^m}$ given $p(x)$. But often it is useful and technically simpler to compute the generating functions. From these one gets the moments by differentiation.
+
+\subsection{Moment generating function}
+
+\[M(t) = \int_{-\infty}^{\infty} dx \, e^{xt} p(x)\ = \sum_{m=0}^{\infty} \frac{t^m}{m!} \braket{x^m}\] with $x\in \mathbb{R}$
+
+\subsection{Characteristic function}
+
+\[C(t) = \int_{-\infty}^{\infty} dx \, \, e^{ixt} p(x) = \sum_{n=0}^{\infty} \frac{(it)^n}{n!} \braket{x^n}\] with $x \in \mathbb{R}$
+
+To get the moment $$\od{^n}{t^n} M(t)|_{t=0} = \braket{x^n}$$ and similarly $$\frac{1}{i^n} \od{^n}{t^n} C(t)|_{t=0} = \braket{x^n}$$
+
+\subsubsection*{Example}
+
+Suppose $$C(t) = \exp \left(\sum_{n=1}^{\infty} \frac{(it)^n}{n!} k_n\right)$$ with $k_n$ the n$^{th}$ cumulant. Express $k_1, k_2, k_3$ in terms of the moments of the distribution.
