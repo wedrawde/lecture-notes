@@ -1,0 +1,65 @@
+\begin{center}
+
+Lecture 7
+
+\end{center}
+
+Examples of different types of equilibrium point.
+
+\subsubsection*{Example 1}
+
+$\dot{x} = y$ and $\dot{y} = - x$ has an equilibrium point at $x = y = 0$.
+
+\subsubsection*{Example 2}
+
+$\dot{x} = x$ and $\dot{y} = y$
+
+Look at $\dot{x} = x$ $\implies$ $x = Ae^t$ and thus $y = B e^t$. Thus $\frac{y}{x} = \frac{B}{A}$ which is unstable.
+
+\subsubsection*{Example 3}
+
+$\dot{x} = - x$ and $\dot{y} = -2y$. Thus $y = \frac{B}{A^2}x^2$ and therefore we have parabolas through the origin as phase flows.
+
+\subsubsection*{Example 4}
+
+$\dot{x} = x$ and $\dot{y} = -y$. We have that $xy = AB$ and thus we have a saddle point.
+
+\vspace{\baselineskip}
+
+We can see there are lots of different behaviours near fixed points. To decide whether they are stable or not introduce the following definitions.
+
+\subsection{Definitions of Stability}
+
+An equilibrium point $x'$ is called Lyapunov stable iff $\forall \epsilon > 0, \exists \delta > 0 \text{such that if} |y-x'|<\delta \implies |g^t y - x'| < \epsilon$ recall $g^t y$ is $\phi(t,y)$ the solution to a dynamical system such that $\phi(0,y) = y$.
+
+As an example the simple harmonic oscillator is Lyapunov stable because I can pick $\delta = \epsilon > 0$ and thus $|y-\underbrace{x'}_{0}| = |y| = |g^t y - x'|$.
+
+Lyapunov stability can be thought of as ``start close stay close''.
+
+\vspace{\baselineskip}
+
+An equilibrium point $x'$ is quasi-asymptotically stable iff $\exists \delta > 0$ such that if $|y-x'|<\delta$ then $|g^t y - x'| \rightarrow 0$ as $t \rightarrow \infty$
+
+\vspace{\baselineskip}
+
+An equilibrium point is asymptotically stable iff it is both Lyapunov and quasi-asymptotically stable.
+
+\subsubsection*{Example}
+
+$\dot{x} = -x$ and $\dot{y} = -y$ and thus the equilibrium point is $x=y=0$. The solutions are $x=Ae^{-t}$ and $y = Be^{-t}$. Thus $r^2 = x^2 + y^2 = A^2 e^{-2t} + B^2 e^{-2t} = (A^2 + B^2) e^{-2t}$ and thus $r = \sqrt{A^2 + B^2} e^{-t}$. Therefore r is strictly monotonically decreasing $\dot{r} < 0$. This is Lyapunov stable since $|g^t y| < |y|$. Thus $|g^t y -x'| < |y-x'|$ and we can take $\delta = \epsilon$ which implies Lyapunov stable.
+
+Now as $t \rightarrow \infty$ we see $r \rightarrow 0$ so $|g^t y - 0| \rightarrow 0$ $\implies$ $q$ is asymptotically stable.
+
+\subsection{Some other terms}
+
+Periodic orbits: $\exists T$ such that $g^{t+T} y = g^t y$ for some $y$
+
+\subsection{Limit cycles}
+
+Example of a limit cycle.
+
+In polar coordinates pick $\dot{r} = r(1-r^2)$ and $\dot{\theta} = 1$. All trajectories apart from the origin come close to $r=1$ as $t\rightarrow \infty$. Thus $r=1$ is called a limit cycle.
+
+\subsection{Invariant sets}
+
+Critical points, periodic orbits, limit cycles are all examples of invariant sets. A set $S \subset M$ ($M$ is the phase space) is called invariant iff $x_0 \in S$ then $g^t x_0 \in S$ for all $t$.

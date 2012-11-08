@@ -1,0 +1,64 @@
+\begin{center}
+
+Lecture 6
+
+\end{center}
+
+We have that $$u_{k+1} = x_0 + \int_0^t F(u_k(s)) ds$$ with $u_k(t) \in O_{\rho}$ and $\forall k > 0$
+
+We are going to show $|u_{k+1} (s) - u_k(s)| \leq (aK)^{k} L$ $\forall s \in [-a,a]$ for some $L$ and all $k>0$.
+
+By induction: 
+\begin{align*}
+|u_2(t) - u_1(t)| &= |x_0 + \int_0^t F(u_1(s)) ds - x_0 - \int_0^t F(u_0(s)) ds| \\
+&= |\int_0^t F(u_1(s)) ds - F(x_0) ds| \leq \int_0^t |F(u_1(s)) - F(x_0)| ds \\
+&\leq \int_0^t K|u_1(s) - x_0| ds
+\end{align*}
+
+Let $\max_{s\in[-a,a]} |u_0(s) - x_0| = L$ $\implies$ $|u_2(t) - u_1(t)| \leq KL \int_0^t ds \leq KLs$
+
+Suppose true for $k-1$:
+
+\begin{align*}
+|u_{k+1}(t) - u_k(t)| &= | \int_0^t F(u_k(s)) ds - F(u_{k-1}(s)) ds | \leq \int_0^t |F(u_k(s)) - F(u_{k-1}(s))| ds \\
+&\leq \int_0^t K |u_k(s) - u_{k-1}(s)| ds \leq \int_0^t K(aK)^{k-1} L ds \\
+&= LK^k a^{k-1} \int_0^t ds \leq L(Ka)^{k} \\
+\end{align*}
+
+So true for all $k$.
+
+Note that since $a < \min \left\{\frac{\rho}{M}, \frac{1}{k}\right\}$ and $aK<1$ then $u_{k+1} (t) - u_k(t) | \rightarrow 0$ as $k \rightarrow \infty$.
+
+Recall lemma 2: Given any $\epsilon > 0$ there exists $N$ such that $p,q>N$: $$\max_{t\in [-a,a]} |u_p(t) - u_q(t)| < \epsilon$$ then there exists $u(t)$ such that $$\lim_{k \rightarrow 0} u_k(t) \rightarrow u(t)$$
+
+Now this becomes a geometric series.
+
+Having proved that $u_k(t) \rightarrow u(t)$ for $t \in [-a,a]$ where $u(t)$ satisfies $$u(t) = x_0 + \int_0^t F(u(s)) ds$$ that is $u=F(u)$ and $u(0) = x_0$
+
+We have shown existence, now for uniqueness:
+
+Suppose that there are two solutions $x(t)$ and $y(t)$. We would then have: $$x(t) = x_0 + \int_0^t F(x(s)) ds$$ and $$y(t) = x_0 + \int_0^t F(y(s)) ds$$
+
+Suppose that $\max |y(t) - x(t)| = Q > 0$ for $t\in [-a,a]$, that is there exists $t_1$ such that $|y(t_1) - x(t_1)| = Q$. Now:
+\begin{align*}
+Q = |y(t_1) - x(t_1)| &= | \int_0^{t_1} (F(y(s)) - F(x(s))) ds | \\
+&\leq \int_0^{t_1} | F(y(s)) - F(x(s))| ds \\
+&\leq \int_0^{t_1} K|y(s) - x(s)| ds \\
+&\leq \int_0^{t_1} KQ ds \leq aKQ
+\end{align*}
+
+If $Q>0$ then $aK\geq1$. But as $a < \min \left(\frac{\rho}{M}, \frac{1}{K}\right)$ so $\underbrace{aK}_{\alpha} < 1$ which is a contradiction. Thus $Q=0$ $\implies$ $y(t) = x(t)$
+
+\subsection{Features of Phase Flows}
+
+The existence and uniqueness theorem means that there is one trajectory through each point $x_0 \in M$ ($M$ being the phase space). Here we use the fact that the solution $\phi(t, x_0)$ which has $\phi(0, x_0) = x_0$ depends continuously on $x_0$. But there are still points in phase flow which don't look like this, and are important to describing qualitative behaviour.
+
+A Critical point (equilibrium, singular, stationary) is if the dynamical system is given by $\dot{x} = F(x,t)$ then a critical point is a point such that $F(x',t) = 0$ $\forall t$. That is $\dot{x} = 0$ So the solution $\phi(t, x')$ such that $\phi(0,x') = x'$. Thus $\phi(t,x') = g^t x' = x'$ $\forall t$. Thus $x'$ is a trajectory itself.  
+
+\subsubsection*{Example}
+
+Find the critical points of $\dot{x} = x^2 + y$ and $\dot{y} = x-y$.
+
+We need $\dot{x} = 0 \implies x^2 + y = 0$ and $\dot{y} = 0 \implies x-y = 0$ thus $x^2+x=0$ $\implies x=0, x=-1$.
+
+Thus there are 2 critical points $(0,0)$ and $(-1, -1)$

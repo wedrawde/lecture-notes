@@ -1,0 +1,46 @@
+\begin{center}
+
+Lecture 8
+
+\end{center}
+
+\section{Linear Systems}
+
+We have seen that to understand phase flow, it is good to find critical points and then look at the system near these points.
+
+\vspace{\baselineskip}
+
+Claim: near critical points, the dynamical system is approximately ``linear''. We can solve, at least approximately, near fixed points. We'll do this, and use this to classify critical points. We can linearise systems near fixed points. 
+
+Suppose a dynamical system has a fixed point $\dot{x} = F(x)$ has a fixed point at $x=x_0$ i.e. at $x=x_0$ we have $\dot{x} = F(x_0) = 0$. Let's consider behaviour of the dynamical system near $x=x_0$. Let $x(t) = x_0 + \epsilon(t)$. The dynamical system $\od{}{t} = F(x)$ becomes: $$\od{}{t} (x_0 + \epsilon(t)) = F(x_0 + \epsilon(t))$$ Now we expand with respect to $\epsilon$:
+$$\dot{\epsilon} = F(x_0 + \epsilon) = \underbrace{F(x_0)}_{\mathclap{0 \text{as} x_0 \text{is a fixed point}}} + \epsilon_i \pd{}{x_i} F(x_0) + \underbrace{\frac{1}{2} \epsilon_i \epsilon_j \frac{\partial^2}{\partial x_i \partial x_j} F(x_0)}_{\mathclap{\text{ignore as} \epsilon \text{small}}} + \cdots$$
+
+In index notation: $$\dot{\epsilon}_j = \frac{\partial F_j}{\partial x_i} (x_0) \epsilon_i$$ and thus $$\dot{\epsilon}_j = A_{ji} \epsilon_i$$ with $A_{ji}$ a constant matrix.
+
+All dynamical systems near fixed points can be reduced to this form.
+
+\subsubsection*{Example}
+
+$\dot{x} = e^{x+y} - y$ and $\dot{y} = -x + xy$. This has a fixed point when $e^{x+y} - y = 0$ and $-x + xy = 0$ and thus $x(y-1) = 0$ and either $x=0$ or $y=1$. After more thought we see that $y=1$ and $x=-1$ is the fixed point.
+
+Fixed point at $\begin{pmatrix} x_0 \\ y_0 \end{pmatrix}$. Put $\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} x_0 \\ y_0 \end{pmatrix} + \begin{pmatrix} \epsilon_1 \\ \epsilon_2 \end{pmatrix} = \begin{pmatrix} -1 \\ 1 \end{pmatrix} + \begin{pmatrix} \epsilon_1 \\ \epsilon_2 \end{pmatrix}$
+
+Now $$\begin{pmatrix} \dot{x} \\ \dot{y} \end{pmatrix} = \begin{pmatrix} \dot{\epsilon}_1 \\ \dot{\epsilon}_2 \end{pmatrix} = \begin{pmatrix} e^{x+y} - y \\ -x + xy \begin{pmatrix} = \begin{pmatrix} e^{(-1 + \epsilon_1) + (1+\epsilon_2)} -1 - \epsilon_2 \\ - (-1 + \epsilon_1) + (-1 +\epsilon_1)(1+\epsilon_2) \end{pmatrix}$$
+
+Now taylor expand to see that: $$\begin{pmatrix} \dot{x} \\ \dot{y} \end{pmatrix} = \begin{pmatrix} \epsilon_1 \\ - \epsilon_2 \end{pmatrix} + O(\epsilon^2)$$
+
+Then and $\dot{\epsilon}_2 = -\epsilon_2$. Thus $\epsilon_1 = A e^t$ and $\epsilon_2 = B e^{-t}$. Thus $\epsilon_1 \epsilon_2 = AB = \text{constant}$ and near $x = \begin{pmatrix} -1 \\ 1 \end{pmatrix}$ the system looks like a saddle point.
+
+\subsection{Classifying 1 and 2 dimensional linear systems}
+
+We shall assume in this that the fixed point is at $x_0 = 0$ without loss of generality (if not define new coordinates $x' = x - x_0$ if the fixed point is $x = x_0$). The linear system $\dot{x}_i = A_{ij} x_j$ with $i = 1 \ldots N$. If $N=1$ the equation looks like $\dot{x} = Ax$ with $x = c e^{At)}$. Here there are 3 possibilities: $A>0$ which is unstable, $A=0$ where all points are fixed points and $A<0$ which is stable.
+
+Now look at $N=2$. In 2d things are more interesting. To understand this better consider the effect of changing coordinates by some linear transformation: $x = M y$ (assuming $M$ is invertible).
+
+In terms of $y$ the dynamical system becomes: $\dot{x} = Ax = AMy$ and thus $\frac{d}{dt} (My) = M\dot{y} = AMy$ and $\dot{y} = M^{-1}AM y= A' y$.
+
+The two equations $\dot{x} = Ax$ and $\dot{y} = A' y$ where $A' = M^{-1}AM$ is the same dynamical system in different coordinates.
+
+So consider together all equations of the form $\dot{x} = A x$ for different $A$ in the same conjugacy class. We want to choose a nice set of coordinates $y$ so that system looks simple (think of choosing coordinates so that A is nice).
+
+In order to specify a conjugacy class of matrices, use eigenvalues. Eigenvalues are solutions to the characteristic polynomial, i.e. $\lambda$ is an eigenvalue of $A$ iff $\det (A - \lambda I) = 0$. If $A' = M^{-1}AM$ then $\det (A' - \lambda I) = \det (M^{-1}AM - \lambda I) = \det(M^{-1} (A - \lambda I) M) = \det(M^{-1}) \det(A - \lambda I) \det (M)$. So if $\lambda$ is an eigenvalue of $A$ it is also an eigenvalue of $A'$.

@@ -1,0 +1,73 @@
+\begin{center}
+
+Lecture 7
+
+\end{center}
+
+\subsection{Generalised Random Walk}
+
+Consider a random walk in 1 dimension with $s_i$ denoting the displacement in the $i^{th}$ step. Define the probability that the $i^{th}$ displacement lies between $s_i$ and $s_i + ds_i$ to be $w (s_i) ds_i$.
+
+We need to calculate:
+
+\begin{enumerate}
+\item The moments of the probability distribution $P(x)$ for the total displacement $x$ after $N$ steps.
+\item Find $P(x)$
+\end{enumerate}
+
+First compute the average value of net displacement.
+
+$$x = \sum_{i=1}^N s_i$$ then 
+\begin{align*}
+\braket{x} &= \braket{\sum_{i=1}^N s_i} \\
+&= \sum_{i=1}^N \braket{s_i} \\
+&= N \braket{s}
+\end{align*}
+
+\noindent where $\braket{s} = \displaystyle \int s w(s) \,\, ds$
+
+Thus $s_i$ are independent random variables distributed according to the continuous distribution $w(s_i)$.
+
+Now we compute the variance of the mean displacement:
+
+\begin{align*}
+\braket{(\Delta x)^2} &= \braket{x^2} - \braket{x}^2 \\
+&= \braket{(x - \braket{x})^2} \\
+&= \braket{\left(\sum_{i=1}^N \Delta s_i\right)\left(\sum_{j=1}^N \Delta s_j\right)} \\
+&= \braket{\sum_{i=1}^N (\Delta s_i)^2 + \sum_{i \neq j} (\Delta s_i) (\Delta s_j)} \\
+&= \sum_{i-1}^N \braket{(\Delta s_i)^2} + \sum_{i \neq j} \braket{(\Delta s_i) (\Delta s_j)} \\
+&= N \braket{(\Delta s)^2} = N \int (\Delta s)^2 w(s) \, \, ds
+\end{align*}
+
+To compute $P(x)$ consider $P(x) dx$ which is the probability to find the particle in $[x, x+dx]$ after $N$ steps.
+
+$$P(x) = \left\{ \underbrace{\int \cdots \int}_{\text{N integrals}} \bigg|_{\sum_{i=1}^N s_i = x} w(s_1) \, ds_1 \, \, w(s_2) \, ds_2 \, \, \cdots w(s_n) \, \, ds_n \right\} \, \, dx$$
+
+Now $$P(x) = \left\{ \int_{\infty}^{\infty} \cdots \int_{\infty}^{\infty} w(s_1) \, ds_1 \, \, w(s_2) \, ds_2 \, \, \cdots w(s_n) \, \, ds_n \, \delta(x - \sum_{i=1}^N s_i) \, \right\} \, \, dx$$
+
+With $\delta(x - \sum_{i=1}^N s)$ implements the constraint that $x = \sum s$. Now recall: $\int_{\infty}^{\infty}  f(x) \delta(x) \, \, dx = f(0)$. Thus:
+
+\begin{equation*}
+\delta(x) = \int_{\infty}^{\infty} \frac{dk}{2 \pi} e^{-ikx}
+\end{equation*}
+
+Thus:
+
+\begin{align*}
+P(x) dx &= \left[ \int_{-\infty}^{\infty} w(s_1) \, \, ds_1 \int_{-\infty}^{\infty} w(s_2) \,\, ds_2 \cdots \int_{-\infty}^{\infty} \, \, \int_{-\infty}^{\infty} \frac{dk}{2\pi} e^{-ik (x - \sum_{i=1}^N s_i)}\right] dx \\
+&= \int_{-\infty}^{\infty} \left [ \int_{-\infty}^{\infty} w(s_1) e^{iks_1} \, \, ds_1 \, \int_{-\infty}^{\infty} w(s_2) e^{iks_2} \, ds_2 \cdots \int_{-\infty}^{\infty} w(s_n) e^{iks_n} \, \, ds_n\right] e^{-ikx} \\
+&= dx \int_{-\infty}^{\infty} \frac{dk}{2\pi} e^{-ikx} \left(\Pi_{i=1}^N \int_{-\infty}^{\infty} ds_i \, w(s_i) e^{iks_i}\right)
+\end{align*}
+
+Thus $$P(x) = \int_{\infty}^{\infty} \frac{dk}{2\pi} e^{ikx} \left(\int_{-\infty}^{\infty} ds \, \, w(s) e^{iks}\right)^N$$
+
+Recalling the definition of the characteristic function: $$C_{w} = \int_{-\infty}^{\infty} ds \, \, w(s) e^{iks}$$ we get
+$$P(x) = \int_{-\infty}^{\infty} \frac{dk}{2\pi} e^{ikx} \left[C_w(k)\right]$$
+
+And thus $P(x)$ is the inverse Fourier transform of $N$ powers of the characteristic function $C_w(k)$.
+
+Describe the discrete 1d random walk on a lattice by giving the probability distribution $w(s)$ for 1 step. At a given step the displacement right by $+a$ is given by $r$ and left by $-a$ has probability $s$.
+
+$w(s) ds$ which denotes the single step probability to be between $s$ and $s+ds$ is therefore: $$w(y) dy = \left[r \delta(y-a) + s \delta(y+a)\right] dy$$
+
+As an exercise: use this definition of $w(y) dy$ to compute $P(x)$ and show that it is indeed given by a binomial distribution.

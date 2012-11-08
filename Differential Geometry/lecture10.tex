@@ -1,0 +1,43 @@
+\begin{center}
+
+Lecture 10
+
+\end{center}
+
+The definition of a surface $S \subset \mathbb{R}^n$: $\forall p \in S \exists x : U \rightarrow S \cap V$ with $U \subset \mathbb{R}^2$ open and $p \in V$.
+
+With the following properties:
+\begin{enumerate}
+\item $x$ is smooth
+\item $x$ is a homomorphism
+\item $\pd{x}{u}$, $\pd{x}{y}$ are linearly independent $\implies$ $d_{(u,y)} \times (\mathbb{R}^2) \subset \mathbb{R}^3$ is two dimensional for all $u,v \in U$.
+\end{enumerate}
+
+Let $U \subset \mathbb{R}^2$ be open and $g: U \rightarrow \mathbb{R}$ be a smooth function. Then the graph of $g$. $\text{graph}(g) = \{(u,v,g(u,v)) | (u,v) \in U}$ is a surface in $\mathbb{R}^3$.
+
+\begin{proof}
+
+Let $x : U \rightarrow \mathbb{R}^3$ be a global parametrisation defined by $x(u,v) = (u,v,g(u,v))$.
+\begin{enumerate}
+\item $V = \mathbb{R}^3$ is open and $x: U \rightarrow \mathbb{R}^3 \cap \text{graph}(g)$ is a smooth map.
+\item $x : U \rightarrow \text{graph}(f)$ is bijective $x(u,v) = x(u',v')$ $\implies$ $(u,v) = (u',v')$. By definition, $x$ is surjective and thus $x : U \rightarrow \text{graph}(U)$ is bijective. $x^{-1} : \text{graph}(g) \rightarrow U$ is the restriction of the projection $\pi: \mathbb{R}^3 \rightarrow \mathbb{R}^2$, $\pi(u,v,w) = (u,v)$. $\pi$ is continuous and therefore also $x^{-1}$.
+\item $\displaystyle \pd{x}{u} (u,v) = \begin{pmatrix} 1 \\ 0 \\ \pd{y}{u}(u,v) \end{pmatrix}$ and $\displaystyle \pd{x}{v} = \begin{pmatrix} 0 \\ 1 \\ \pd{y}{v} (u,v) \end{pmatrix}$ $\implies$ $\pd{x}{u}, \pd{x}{v}$ is linearly independent.
+\end{enumerate}
+
+\subsubsection*{Example: Elliptic Paraboloid}
+
+$U = \mathbb{R}^2$ and $g(u,v) = \frac{u^2}{a^2} + \frac{v^2}{b^2}$ with $a,b > 0$. $\text{graph}(g)$ is elliptic paraboloid. The intersection of $\text{graph}(g)$ with the horizontal plane $E_c = \{ (u,v,c) | u,v\in \mathbb{R}\}$. This leads to ellipses: $\frac{u^2}{a^2} + \frac{v^2}{b^2} = c$.
+
+\subsubsection*{Example: Hyperbolic Paraboloid}
+
+$U = \mathbb{R}^2$, $g(u,v) = \frac{u^2}{a^2} - \frac{v^2}{b^2}$ with $a,b>0$. $\text{graph}(g)$ is a hyperbolic paraboloid.
+
+\subsubsection*{Example: Sphere}
+
+Sphere of radius $r > 0$ around $O \in \mathbb{R}^3$. We see: $$S(r) = \{ (x,y,z) | x^2 + y^2 + z^2 - r^2 = 0 \}$$
+
+Now consider: $$x^2 + y^2 + z^2 - r^2 = 0 \implies z = \pm \sqrt{r^2 - x^2 - y^2}$$
+
+Consider $g(u,v) = \sqrt{r^2 - u^2 - v^2}$ $g$ is smooth if $u^2 + v^2 < r^2$, that is we define $g$ on $U = B_r(0) \subset \mathbb{R}^2$ $\implies$ $\text{graph}(g) = \{ (u,v,\sqrt{r^2 - u^2 - v^2}) | u^2 + v^2 < r^2\}$ is a surface, i.e., the upper hemisphere (not including the equator). Similarly for lower hemisphere by choosing $g(u,v) = - \sqrt{r^2 - u^2 - v^2}$.
+
+We still miss the equator. These parts can be covered by $y = \pm \sqrt{r^2 - x^2 - z^2}$ and $x = \pm \sqrt{r^2 - x^2 - z^2}$
